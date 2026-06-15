@@ -1,129 +1,59 @@
-<p align="center">
-  <a href="https://smart.ai">
-    <picture>
-      <source srcset="packages/console/app/src/asset/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)">
-      <source srcset="packages/console/app/src/asset/logo-ornate-light.svg" media="(prefers-color-scheme: light)">
-      <img src="packages/console/app/src/asset/logo-ornate-light.svg" alt="Smart logo">
-    </picture>
-  </a>
-</p>
-<p align="center">The open source AI coding agent.</p>
-<p align="center">
-  <a href="https://smart.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
-  <a href="https://www.npmjs.com/package/smart-ai"><img alt="npm" src="https://img.shields.io/npm/v/smart-ai?style=flat-square" /></a>
-  <a href="https://github.com/anomalyco/smart/actions/workflows/publish.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/anomalyco/smart/publish.yml?style=flat-square&branch=dev" /></a>
-</p>
+# Smart Agent TUI
 
-<p align="center">
-  <a href="README.md">English</a> |
-  <a href="README.zh.md">简体中文</a> |
-  <a href="README.zht.md">繁體中文</a> |
-  <a href="README.ko.md">한국어</a> |
-  <a href="README.de.md">Deutsch</a> |
-  <a href="README.es.md">Español</a> |
-  <a href="README.fr.md">Français</a> |
-  <a href="README.it.md">Italiano</a> |
-  <a href="README.da.md">Dansk</a> |
-  <a href="README.ja.md">日本語</a> |
-  <a href="README.pl.md">Polski</a> |
-  <a href="README.ru.md">Русский</a> |
-  <a href="README.bs.md">Bosanski</a> |
-  <a href="README.ar.md">العربية</a> |
-  <a href="README.no.md">Norsk</a> |
-  <a href="README.br.md">Português (Brasil)</a> |
-  <a href="README.th.md">ไทย</a> |
-  <a href="README.tr.md">Türkçe</a> |
-  <a href="README.uk.md">Українська</a> |
-  <a href="README.bn.md">বাংলা</a> |
-  <a href="README.gr.md">Ελληνικά</a> |
-  <a href="README.vi.md">Tiếng Việt</a>
-</p>
+**Smart Agent TUI** 是一個從 [OpenCode](https://github.com/sst/opencode) fork 出來、修改而成的 AI 編碼代理終端介面。
 
-[![Smart Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://smart.ai)
+> 本專案是 OpenCode 的衍生版本，並非原始專案官方版本。
 
 ---
 
-### Installation
+## 關於本專案
+
+OpenCode 是一個優秀的開源 AI 編碼代理，支援終端介面（TUI）、桌面應用與 Web 介面。
+
+Smart Agent TUI 在 OpenCode 的基礎上進行了客製化修改，包含：
+
+- **Smart MCP Agent** 整合 — 增強的 MCP 工具路由與代理架構
+- **自訂技能系統** — 支援 OpenCode Skills 載入與執行
+- **增強的 prompt 模板** — 針對不同使用場景最佳化的系統提示
+- **客製化工具鏈** — 整合程式碼分析、編輯、除錯、搜尋等工具
+
+---
+
+## 安裝
+
+安裝方式與原始 OpenCode 相同（套件名稱為 `smart-ai`）：
 
 ```bash
 # YOLO
 curl -fsSL https://smart.ai/install | bash
 
 # Package managers
-npm i -g smart-ai@latest        # or bun/pnpm/yarn
-scoop install smart             # Windows
-choco install smart             # Windows
-brew install anomalyco/tap/smart # macOS and Linux (recommended, always up to date)
-brew install smart              # macOS and Linux (official brew formula, updated less)
-sudo pacman -S smart            # Arch Linux (Stable)
-paru -S smart-bin               # Arch Linux (Latest from AUR)
-mise use -g smart               # Any OS
-nix run nixpkgs#smart           # or github:anomalyco/smart for latest dev branch
+npm i -g smart-ai@latest
+brew install anomalyco/tap/smart
 ```
 
-> [!TIP]
-> Remove versions older than 0.1.x before installing.
-
-### Desktop App (BETA)
-
-Smart is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/smart/releases) or [smart.ai/download](https://smart.ai/download).
-
-| Platform              | Download                           |
-| --------------------- | ---------------------------------- |
-| macOS (Apple Silicon) | `smart-desktop-mac-arm64.dmg`   |
-| macOS (Intel)         | `smart-desktop-mac-x64.dmg`     |
-| Windows               | `smart-desktop-windows-x64.exe` |
-| Linux                 | `.deb`, `.rpm`, or `.AppImage`     |
-
-```bash
-# macOS (Homebrew)
-brew install --cask smart-desktop
-# Windows (Scoop)
-scoop bucket add extras; scoop install extras/smart-desktop
-```
-
-#### Installation Directory
-
-The install script respects the following priority order for the installation path:
-
-1. `$SMART_INSTALL_DIR` - Custom installation directory
-2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
-3. `$HOME/bin` - Standard user binary directory (if it exists or can be created)
-4. `$HOME/.smart/bin` - Default fallback
-
-```bash
-# Examples
-SMART_INSTALL_DIR=/usr/local/bin curl -fsSL https://smart.ai/install | bash
-XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://smart.ai/install | bash
-```
-
-### Agents
-
-Smart includes two built-in agents you can switch between with the `Tab` key.
-
-- **build** - Default, full-access agent for development work
-- **plan** - Read-only agent for analysis and code exploration
-  - Denies file edits by default
-  - Asks permission before running bash commands
-  - Ideal for exploring unfamiliar codebases or planning changes
-
-Also included is a **general** subagent for complex searches and multistep tasks.
-This is used internally and can be invoked using `@general` in messages.
-
-Learn more about [agents](https://smart.ai/docs/agents).
-
-### Documentation
-
-For more info on how to configure Smart, [**head over to our docs**](https://smart.ai/docs).
-
-### Contributing
-
-If you're interested in contributing to Smart, please read our [contributing docs](./CONTRIBUTING.md) before submitting a pull request.
-
-### Building on Smart
-
-If you are working on a project that's related to Smart and is using "smart" as part of its name, for example "smart-dashboard" or "smart-mobile", please add a note to your README to clarify that it is not built by the Smart team and is not affiliated with us in any way.
+> 更詳細的安裝說明請參考 [OpenCode 官方文件](https://opencode.ai/docs)。
 
 ---
 
-**Join our community** [Discord](https://discord.gg/smart) | [X.com](https://x.com/smart)
+## 差異說明
+
+| 項目 | OpenCode | Smart Agent TUI |
+|------|----------|----------------|
+| 基礎架構 | 原始版本 | Fork 後客製化 |
+| MCP 工具路由 | 標準實作 | 增強路由 + Smart Agent |
+| 技能系統 | 內建技能 | 可擴充技能載入 |
+| 系統提示 | 預設提示 | 客製化模板 |
+
+---
+
+## 授權
+
+本專案繼承原始 OpenCode 的授權條款。詳見 [LICENSE](./LICENSE)。
+
+---
+
+## 致謝
+
+- [OpenCode](https://github.com/sst/opencode) — 原始的 AI 編碼代理專案
+- [SST](https://sst.dev) — OpenCode 的維護團隊
