@@ -1,0 +1,25 @@
+{
+  "$schema": "https://v2-8-13.turborepo.dev/schema.json",
+  "globalEnv": ["CI", "SMART_DISABLE_SHARE"],
+  "globalPassThroughEnv": ["CI", "SMART_DISABLE_SHARE"],
+  "tasks": {
+    "typecheck": {},
+    "build": {
+      "dependsOn": [],
+      "outputs": ["dist/**"]
+    },
+    "smart#test": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "passThroughEnv": ["*"]
+    },
+    "@smart-ai/app#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "@smart-ai/ui#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    }
+  }
+}

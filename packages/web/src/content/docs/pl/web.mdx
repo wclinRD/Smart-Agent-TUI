@@ -1,0 +1,142 @@
+---
+title: Web
+description: Korzystanie z smart w przeglądarce.
+---
+
+smart może działać jako aplikacja internetowa w przeglądarce, zapewniając takie same możliwości kodowania AI bez konieczności korzystania z terminala.
+
+![Sieć smart - Nowa sesja](../../../assets/web/web-homepage-new-session.png)
+
+## Pierwsze kroki
+
+Uruchom interfejs sieciowy, uruchamiając:
+
+```bash
+smart web
+```
+
+Spowoduje to uruchomienie lokalnego serwera na `127.0.0.1` z losowo dostępnym portem i automatyczne otwarcie smart w domyślnej przeglądarce.
+
+:::caution
+Jeśli `SMART_SERVER_PASSWORD` nie jest ustawione, serwer będzie niezabezpieczony. Jest to dobre rozwiązanie do użytku lokalnego, ale powinno być ustawione na dostęp do sieci.
+:::
+
+:::tip[Windows Users]
+Aby uzyskać najlepsze wyniki, uruchom `smart web` z [WSL](/docs/windows-wsl) zamiast programu PowerShell. Zapewnia to prawidłowy dostęp do systemu plików i integrację terminala.
+:::
+
+---
+
+## Konfiguracja
+
+Możesz skonfigurować serwer WWW za pomocą flag wiersza poleceń lub w [pliku konfiguracyjnym] (./config).
+
+### Port
+
+Domyślnie smart wybiera dostępny port. Możesz określić port:
+
+```bash
+smart web --port 4096
+```
+
+### Nazwa hosta
+
+Domyślnie serwer łączy się z `127.0.0.1` (tylko localhost). Aby udostępnić smart w swojej sieci:
+
+```bash
+smart web --hostname 0.0.0.0
+```
+
+Podczas korzystania z `0.0.0.0` smart wyświetli zarówno adresy lokalne, jak i sieciowe:
+
+```
+  Local access:       http://localhost:4096
+  Network access:     http://192.168.1.100:4096
+```
+
+### Wykrywanie mDNS
+
+Włącz mDNS, aby Twój serwer był wykrywalny w sieci lokalnej:
+
+```bash
+smart web --mdns
+```
+
+To automatycznie ustawia nazwę hosta na `0.0.0.0` i anonsuje serwer jako `smart.local`.
+
+Możesz dostosować nazwę domeny mDNS, aby uruchamiała wiele instancji w tej samej sieci:
+
+```bash
+smart web --mdns --mdns-domain myproject.local
+```
+
+### CORS
+
+Aby zezwolić na dodatkowe domeny dla CORS (przydatne w przypadku niestandardowych interfejsów):
+
+```bash
+smart web --cors https://example.com
+```
+
+### Uwierzytelnianie
+
+Aby chronić dostęp, ustaw hasło za pomocą zmiennej środowiskowej `SMART_SERVER_PASSWORD`:
+
+```bash
+SMART_SERVER_PASSWORD=secret smart web
+```
+
+Domyślna nazwa użytkownika to `smart`, ale można ją zmienić za pomocą `SMART_SERVER_USERNAME`.
+
+---
+
+## Korzystanie z interfejsu internetowego
+
+Po uruchomieniu interfejs sieciowy zapewnia dostęp do sesji smart.
+
+### Sesje
+
+Przeglądaj sesje i zarządzaj nimi ze strony głównej. Możesz zobaczyć aktywne sesje i rozpocząć nowe.
+
+![smart Web - Aktywna sesja](../../../assets/web/web-homepage-active-session.png)
+
+### Stan serwera
+
+Kliknij „Zobacz serwery”, aby wyświetlić podłączone serwery i ich status.
+
+![smart Web - See Servers](../../../assets/web/web-homepage-see-servers.png)
+
+---
+
+## Podłączanie terminala
+
+Możesz podłączyć terminal TUI do działającego serwera WWW:
+
+```bash
+# Start the web server
+smart web --port 4096
+
+# In another terminal, attach the TUI
+smart attach http://localhost:4096
+```
+
+Umożliwia to jednoczesne korzystanie z interfejsu sieciowego i terminala, współdzieląc te same sesje i stan.
+
+---
+
+## Plik konfiguracyjny
+
+Możesz także skonfigurować ustawienia serwera w pliku konfiguracyjnym `smart.json`:
+
+```json
+{
+  "server": {
+    "port": 4096,
+    "hostname": "0.0.0.0",
+    "mdns": true,
+    "cors": ["https://example.com"]
+  }
+}
+```
+
+Flagi wiersza poleceń mają pierwszeństwo przed ustawieniami pliku konfiguracyjnego.

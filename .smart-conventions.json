@@ -1,0 +1,56 @@
+{
+  "conventions": {
+    "naming": {
+      "file": {
+        "camelCase": 1146,
+        "other": 832,
+        "kebabCase": 569,
+        "PascalCase": 2,
+        "snake_case": 1
+      },
+      "variable": {
+        "camelCase": 43247,
+        "PascalCase": 1896,
+        "UPPER_CASE": 800,
+        "other": 37,
+        "snake_case": 66
+      },
+      "function": {
+        "camelCase": 4924,
+        "PascalCase": 1074,
+        "other": 1
+      },
+      "class": {
+        "PascalCase": 719,
+        "camelCase": 25,
+        "other": 1
+      }
+    },
+    "imports": {
+      "commonjs": 11,
+      "esm": 2258,
+      "mixed": true
+    },
+    "testing": {
+      "hasTests": true,
+      "framework": "jest",
+      "pattern": null
+    },
+    "structure": {
+      "src": true,
+      "test": true,
+      "lib": true,
+      "app": true
+    },
+    "languages": [
+      "typescript",
+      "javascript"
+    ],
+    "exports": {
+      "default": 338,
+      "named": 9199
+    }
+  },
+  "preferences": {},
+  "lastAnalyzed": "2026-06-14T21:20:02.934Z"
+}

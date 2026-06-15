@@ -1,0 +1,222 @@
+---
+title: "Agentferdigheter"
+description: "Definer gjenbrukbar oppførsel via SKILL.md-definisjoner"
+---
+
+Agentferdigheter lar Smart oppdage gjenbrukbare instruksjoner fra repo- eller hjemmekatalogen din.
+Ferdigheter lastes inn på forespørsel via det innebygde `skill`-verktøyet – agenter ser tilgjengelige ferdigheter og kan laste inn hele innholdet når det er nødvendig.
+
+---
+
+## Plasser filer
+
+Opprett én mappe per ferdighetsnavn og legg inn en `SKILL.md` i den.
+smart søker etter disse stedene:
+
+- Prosjektkonfigurasjon: `.smart/skills/<name>/SKILL.md`
+- Global konfigurasjon: `~/.config/smart/skills/<name>/SKILL.md`
+- Prosjekt Claude-kompatibel: `.claude/skills/<name>/SKILL.md`
+- Global Claude-kompatibel: `~/.claude/skills/<name>/SKILL.md`
+- Prosjektagent-kompatibel: `.agents/skills/<name>/SKILL.md`
+- Global agent-kompatibel: `~/.agents/skills/<name>/SKILL.md`
+
+---
+
+## Forstå oppdagelsen
+
+For prosjektlokale stier går smart opp fra din nåværende arbeidskatalog til den når git-arbeidstreet.
+Den laster alle matchende `skills/*/SKILL.md` i `.smart/` og alle matchende `.claude/skills/*/SKILL.md` eller `.agents/skills/*/SKILL.md` underveis.
+
+Globale definisjoner lastes også inn fra `~/.config/smart/skills/*/SKILL.md`, `~/.claude/skills/*/SKILL.md` og `~/.agents/skills/*/SKILL.md`.
+
+---
+
+## Skriv frontmatter
+
+Hver `SKILL.md` må starte med YAML frontmatter.
+Bare disse feltene gjenkjennes:
+
+- `name` (påkrevd)
+- `description` (påkrevd)
+- `license` (valgfritt)
+- `compatibility` (valgfritt)
+- `metadata` (valgfritt, streng-til-streng kart)
+
+Ukjente frontmatter-felt ignoreres.
+
+---
+
+## Bekreft navn
+
+`name` må:
+
+- Bestå av 1–64 tegn
+- Vær alfanumerisk med små bokstaver, adskilt med enkel bindestrek
+- Ikke begynne eller slutte med `-`
+- Ikke inneholde påfølgende `--`
+- Samsvare med katalognavnet som inneholder `SKILL.md`
+
+Ekvivalent regulært uttrykk:
+
+```text
+^[a-z0-9]+(-[a-z0-9]+)*$
+```
+
+---
+
+## Følg lengdereglene
+
+`description` må bestå av 1-1024 tegn.
+Hold det spesifikt nok til at agenten kan velge riktig.
+
+---
+
+## Bruk et eksempel
+
+Lag `.smart/skills/git-release/SKILL.md` slik:
+
+```markdown
+---
+name: git-release
+description: Create consistent releases and changelogs
+license: MIT
+compatibility: smart
+metadata:
+  audience: maintainers
+  workflow: github
+---
+
+## What I do
+
+- Draft release notes from merged PRs
+- Propose a version bump
+- Provide a copy-pasteable `gh release create` command
+
+## When to use me
+
+Use this when you are preparing a tagged release.
+Ask clarifying questions if the target versioning scheme is unclear.
+```
+
+---
+
+## Forstå verktøybeskrivelsen
+
+smart viser tilgjengelige ferdigheter i `skill`-verktøybeskrivelsen.
+Hver oppføring inneholder ferdighetsnavnet og beskrivelsen:
+
+```xml
+<available_skills>
+  <skill>
+    <name>git-release</name>
+    <description>Create consistent releases and changelogs</description>
+  </skill>
+</available_skills>
+```
+
+Agenten laster inn en ferdighet ved å kalle verktøyet:
+
+```
+skill({ name: "git-release" })
+```
+
+---
+
+## Konfigurer tillatelser
+
+Kontroller hvilke ferdigheter agenter har tilgang til ved å bruke mønsterbaserte tillatelser i `smart.json`:
+
+```json
+{
+  "permission": {
+    "skill": {
+      "*": "allow",
+      "pr-review": "allow",
+      "internal-*": "deny",
+      "experimental-*": "ask"
+    }
+  }
+}
+```
+
+| Tillatelse | Atferd                                      |
+| ---------- | ------------------------------------------- |
+| `allow`    | Ferdigheter lastes umiddelbart              |
+| `deny`     | Ferdighet skjult for agent, tilgang avvist  |
+| `ask`      | Bruker blir bedt om godkjenning før lasting |
+
+Mønstre støtter jokertegn: `internal-*` samsvarer med `internal-docs`, `internal-tools` osv.
+
+---
+
+## Overstyring per agent
+
+Gi spesifikke agenter andre tillatelser enn de globale standardinnstillingene.
+
+**For egendefinerte agenter** (i agent frontmatter):
+
+```yaml
+---
+permission:
+  skill:
+    "documents-*": "allow"
+---
+```
+
+**For innebygde agenter** (i `smart.json`):
+
+```json
+{
+  "agent": {
+    "plan": {
+      "permission": {
+        "skill": {
+          "internal-*": "allow"
+        }
+      }
+    }
+  }
+}
+```
+
+---
+
+## Deaktiver ferdighetsverktøyet
+
+Deaktiver ferdigheter fullstendig for agenter som ikke bør bruke dem:
+
+**For egendefinerte agenter**:
+
+```yaml
+---
+tools:
+  skill: false
+---
+```
+
+**For innebygde agenter**:
+
+```json
+{
+  "agent": {
+    "plan": {
+      "tools": {
+        "skill": false
+      }
+    }
+  }
+}
+```
+
+Når den er deaktivert, blir `<available_skills>`-delen utelatt helt.
+
+---
+
+## Feilsøk lasting
+
+Hvis en ferdighet ikke vises:
+
+1. Kontroller at `SKILL.md` er stavet med store bokstaver
+2. Sjekk at frontmatter inkluderer `name` og `description`
+3. Sørg for at ferdighetsnavnene er unike på alle steder
+4. Sjekk tillatelser – ferdigheter med `deny` er skjult for agenter

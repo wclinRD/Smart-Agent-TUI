@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Smart
+Exec=/opt/Smart/ai.smart.desktop %U
+Terminal=false
+Type=Application
+Icon=ai.smart.desktop
+StartupWMClass=ai.smart.desktop
+NoDisplay=true
+Comment=Open source AI coding agent
+Categories=Development;

@@ -1,0 +1,24 @@
+{
+  "sessionID": "ses_137fea6fbffeuk3V8y6Zh2y0KN",
+  "modelID": "deepseek-ai/deepseek-v4-pro",
+  "providerID": "nvidia",
+  "limits": {
+    "context": 1048576,
+    "output": 393216
+  },
+  "calculated": {
+    "maxOutputTokens": 32000,
+    "reserved": 20000,
+    "usable": 1016576
+  },
+  "current": {
+    "totalTokens": 74927,
+    "pressure": 0.07370526158398388,
+    "level": "safe"
+  },
+  "thresholds": {
+    "moderate": 762432,
+    "high": 914918
+  },
+  "updatedAt": "2026-06-14T21:36:08.373Z"
+}

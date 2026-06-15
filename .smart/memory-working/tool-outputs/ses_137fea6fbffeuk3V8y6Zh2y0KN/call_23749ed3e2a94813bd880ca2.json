@@ -1,0 +1,7 @@
+{
+  "callID": "call_23749ed3e2a94813bd880ca2",
+  "sessionID": "ses_137fea6fbffeuk3V8y6Zh2y0KN",
+  "tool": "bash",
+  "fullOutput": "=== opencode → smart 全面重命名 ===\n\n處理 4180 個檔案\n\n階段 1：保護第三方套件...\n  ✓ 已保護\n階段 2：@opencode-ai → @smart-ai...\n  ✓ 完成\n階段 3：OpenCode → Smart...\n  ✓ 完成\n階段 4：OPENCODE_ → SMART_...\n  ✓ 完成\n階段 5：.opencode → .smart...\n  ✓ 完成\n階段 6：opencode → smart...\n  ✓ 完成\n階段 7：恢復第三方套件...\n  ✓ 已恢復\n\n=== 文字取代全部完成 ===\n",
+  "timestamp": 1781472945850
+}
