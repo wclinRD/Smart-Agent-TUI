@@ -1,7 +1,7 @@
 import { usePlatform } from "@/context/platform"
-import { Button } from "@smart-ai/ui/button"
-import { useDialog } from "@smart-ai/ui/context/dialog"
-import { Dialog } from "@smart-ai/ui/dialog"
+import { Button } from "@smartcode-ai/ui/button"
+import { useDialog } from "@smartcode-ai/ui/context/dialog"
+import { Dialog } from "@smartcode-ai/ui/dialog"
 import { JSX } from "solid-js"
 
 export type DialogGoUpsellProps = {

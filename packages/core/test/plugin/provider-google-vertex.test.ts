@@ -1,9 +1,9 @@
 import { describe, expect, mock } from "bun:test"
 import { Effect } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { GoogleVertexPlugin } from "@smart-ai/core/plugin/provider/google-vertex"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { GoogleVertexPlugin } from "@smartcode-ai/core/plugin/provider/google-vertex"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { fakeSelectorSdk, it, model, withEnv } from "./provider-helper"
 
 const vertexOptions: Record<string, any>[] = []

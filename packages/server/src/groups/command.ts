@@ -1,5 +1,5 @@
-import { CommandV2 } from "@smart-ai/core/command"
-import { Location } from "@smart-ai/core/location"
+import { CommandV2 } from "@smartcode-ai/core/command"
+import { Location } from "@smartcode-ai/core/location"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { LocationQuery, locationQueryOpenApi, LocationMiddleware } from "./location"

@@ -1,8 +1,8 @@
 import { For, Show } from "solid-js"
-import type { PermissionRequest } from "@smart-ai/sdk/v2"
-import { Button } from "@smart-ai/ui/button"
-import { DockPrompt } from "@smart-ai/ui/dock-prompt"
-import { Icon } from "@smart-ai/ui/icon"
+import type { PermissionRequest } from "@smartcode-ai/sdk/v2"
+import { Button } from "@smartcode-ai/ui/button"
+import { DockPrompt } from "@smartcode-ai/ui/dock-prompt"
+import { Icon } from "@smartcode-ai/ui/icon"
 import { useLanguage } from "@/context/language"
 
 export function SessionPermissionDock(props: {

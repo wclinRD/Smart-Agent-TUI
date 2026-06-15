@@ -1,4 +1,4 @@
-import { createSimpleContext } from "@smart-ai/ui/context"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
 import { createEffect, createMemo, createRoot } from "solid-js"
 import { createStore } from "solid-js/store"
 import { createServerProjects, ServerConnection, useServer } from "./server"

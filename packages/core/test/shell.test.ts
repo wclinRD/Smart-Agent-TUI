@@ -1,8 +1,8 @@
 import { describe, expect, test } from "bun:test"
 import path from "path"
-import { Shell } from "@smart-ai/core/shell"
-import { FSUtil } from "@smart-ai/core/fs-util"
-import { which } from "@smart-ai/core/util/which"
+import { Shell } from "@smartcode-ai/core/shell"
+import { FSUtil } from "@smartcode-ai/core/fs-util"
+import { which } from "@smartcode-ai/core/util/which"
 
 const withShell = async (shell: string | undefined, fn: () => void | Promise<void>) => {
   const prev = process.env.SHELL

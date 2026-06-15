@@ -4,7 +4,7 @@ import { $ } from "bun"
 import fs from "fs"
 import { rm } from "fs/promises"
 import path from "path"
-import { Script } from "@smart-ai/script"
+import { Script } from "@smartcode-ai/script"
 import { createSolidTransformPlugin } from "@opentui/solid/bun-plugin"
 import pkg from "../package.json"
 import { modelsData } from "./generate"
@@ -111,7 +111,7 @@ for (const item of targets) {
     `./dist/${name}/package.json`,
     JSON.stringify(
       {
-        name: `@smart-ai/${name}`,
+        name: `@smartcode-ai/${name}`,
         version: Script.version,
         license: "MIT",
         repository: { type: "git", url: "git+https://github.com/anomalyco/smart.git" },

@@ -27,7 +27,7 @@ export function response<S extends Schema.Top>(data: S) {
   return Schema.Struct({ location: Info, data })
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/Location") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/Location") {}
 
 export const layer = (ref: Ref) =>
   Layer.effect(

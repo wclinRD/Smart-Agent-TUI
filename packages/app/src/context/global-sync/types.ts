@@ -14,8 +14,8 @@ import type {
   SnapshotFileDiff,
   Todo,
   VcsInfo,
-} from "@smart-ai/sdk/v2/client"
-import { NormalizedProviderListResponse } from "@smart-ai/ui/context"
+} from "@smartcode-ai/sdk/v2/client"
+import { NormalizedProviderListResponse } from "@smartcode-ai/ui/context"
 import type { Accessor } from "solid-js"
 import type { SetStoreFunction, Store } from "solid-js/store"
 

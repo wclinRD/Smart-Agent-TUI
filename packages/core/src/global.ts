@@ -42,7 +42,7 @@ await Promise.all([
   fs.mkdir(Path.repos, { recursive: true }),
 ])
 
-export class Service extends Context.Service<Service, Interface>()("@smart/Global") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/Global") {}
 
 export interface Interface {
   readonly home: string

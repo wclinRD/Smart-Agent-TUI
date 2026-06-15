@@ -1,14 +1,14 @@
 import { batch, createMemo } from "solid-js"
 import { createStore, produce, reconcile } from "solid-js/store"
-import { Binary } from "@smart-ai/core/util/binary"
-import { retry } from "@smart-ai/core/util/retry"
+import { Binary } from "@smartcode-ai/core/util/binary"
+import { retry } from "@smartcode-ai/core/util/retry"
 import {
   clearSessionPrefetch,
   getSessionPrefetch,
   getSessionPrefetchPromise,
   setSessionPrefetch,
 } from "./global-sync/session-prefetch"
-import type { Message, Part } from "@smart-ai/sdk/v2/client"
+import type { Message, Part } from "@smartcode-ai/sdk/v2/client"
 import { SESSION_CACHE_LIMIT, dropSessionCaches, pickSessionCacheEvictions } from "./global-sync/session-cache"
 import { diffs as list, message as clean } from "@/utils/diffs"
 import { type createServerSdkContext } from "./server-sdk"

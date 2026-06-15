@@ -1,9 +1,9 @@
 import path from "path"
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { Credential } from "@smart-ai/core/credential"
-import { Database } from "@smart-ai/core/database/database"
-import { Integration } from "@smart-ai/core/integration"
+import { Credential } from "@smartcode-ai/core/credential"
+import { Database } from "@smartcode-ai/core/database/database"
+import { Integration } from "@smartcode-ai/core/integration"
 import { tmpdir } from "./fixture/tmpdir"
 import { it } from "./lib/effect"
 

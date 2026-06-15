@@ -1,4 +1,4 @@
-import { ToolOutput, type LLMEvent, type ProviderMetadata, type ToolResultValue, type Usage } from "@smart-ai/llm"
+import { ToolOutput, type LLMEvent, type ProviderMetadata, type ToolResultValue, type Usage } from "@smartcode-ai/llm"
 import { DateTime, Effect } from "effect"
 import { EventV2 } from "../../event"
 import { ModelV2 } from "../../model"

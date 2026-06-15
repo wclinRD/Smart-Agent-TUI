@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test"
 import { Schema } from "effect"
-import { ModelV2 } from "@smart-ai/core/model"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 
 const decode = Schema.decodeUnknownSync(ModelV2.Ref)
 

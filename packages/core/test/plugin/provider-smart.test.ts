@@ -1,15 +1,15 @@
 import { describe, expect } from "bun:test"
 import { DateTime, Effect, Layer, Option } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { Credential } from "@smart-ai/core/credential"
-import { EventV2 } from "@smart-ai/core/event"
-import { Integration } from "@smart-ai/core/integration"
-import { Location } from "@smart-ai/core/location"
-import { ModelV2 } from "@smart-ai/core/model"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { OpencodePlugin } from "@smart-ai/core/plugin/provider/smart"
-import { ProviderV2 } from "@smart-ai/core/provider"
-import { AbsolutePath } from "@smart-ai/core/schema"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { Credential } from "@smartcode-ai/core/credential"
+import { EventV2 } from "@smartcode-ai/core/event"
+import { Integration } from "@smartcode-ai/core/integration"
+import { Location } from "@smartcode-ai/core/location"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { OpencodePlugin } from "@smartcode-ai/core/plugin/provider/smart"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
 import { location } from "../fixture/location"
 import { it, model, provider, withEnv } from "./provider-helper"
 
@@ -35,7 +35,7 @@ describe("OpencodePlugin", () => {
         yield* transform((catalog) => {
           const item = provider("smart")
           catalog.provider.update(item.id, () => {})
-          const paid = model("smart", "paid", { cost: cost(1) })
+          const paid = model("smartcode", "paid", { cost: cost(1) })
           catalog.model.update(item.id, paid.id, (draft) => {
             draft.cost = [...paid.cost]
           })
@@ -56,7 +56,7 @@ describe("OpencodePlugin", () => {
         yield* transform((catalog) => {
           const item = provider("smart")
           catalog.provider.update(item.id, () => {})
-          const free = model("smart", "free", { cost: cost(0) })
+          const free = model("smartcode", "free", { cost: cost(0) })
           catalog.model.update(item.id, free.id, (draft) => {
             draft.cost = [...free.cost]
           })
@@ -77,7 +77,7 @@ describe("OpencodePlugin", () => {
         yield* transform((catalog) => {
           const item = provider("smart")
           catalog.provider.update(item.id, () => {})
-          const outputOnly = model("smart", "output-only", { cost: cost(0, 1) })
+          const outputOnly = model("smartcode", "output-only", { cost: cost(0, 1) })
           catalog.model.update(item.id, outputOnly.id, (draft) => {
             draft.cost = [...outputOnly.cost]
           })
@@ -98,7 +98,7 @@ describe("OpencodePlugin", () => {
         yield* transform((catalog) => {
           const item = provider("smart")
           catalog.provider.update(item.id, () => {})
-          const paid = model("smart", "paid", { cost: cost(1) })
+          const paid = model("smartcode", "paid", { cost: cost(1) })
           catalog.model.update(item.id, paid.id, (draft) => {
             draft.cost = [...paid.cost]
           })
@@ -126,7 +126,7 @@ describe("OpencodePlugin", () => {
         yield* transform((catalog) => {
           const item = provider("smart")
           catalog.provider.update(item.id, () => {})
-          const paid = model("smart", "paid", { cost: cost(1) })
+          const paid = model("smartcode", "paid", { cost: cost(1) })
           catalog.model.update(item.id, paid.id, (draft) => {
             draft.cost = [...paid.cost]
           })
@@ -154,7 +154,7 @@ describe("OpencodePlugin", () => {
           catalog.provider.update(item.id, (draft) => {
             draft.request = item.request
           })
-          const paid = model("smart", "paid", { cost: cost(1) })
+          const paid = model("smartcode", "paid", { cost: cost(1) })
           catalog.model.update(item.id, paid.id, (draft) => {
             draft.cost = [...paid.cost]
           })

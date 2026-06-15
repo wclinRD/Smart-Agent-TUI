@@ -1,6 +1,6 @@
-import { AgentV2 } from "@smart-ai/core/agent"
-import { SessionMessage } from "@smart-ai/core/session/message"
-import { ToolRegistry } from "@smart-ai/core/tool/registry"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { SessionMessage } from "@smartcode-ai/core/session/message"
+import { ToolRegistry } from "@smartcode-ai/core/tool/registry"
 import { Effect } from "effect"
 
 export const toolIdentity = {

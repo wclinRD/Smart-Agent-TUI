@@ -1,4 +1,4 @@
-import type { AssistantMessage, Part, Provider, UserMessage } from "@smart-ai/sdk/v2"
+import type { AssistantMessage, Part, Provider, UserMessage } from "@smartcode-ai/sdk/v2"
 import { Locale } from "./locale"
 import * as Model from "./model"
 

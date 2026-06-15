@@ -1,8 +1,8 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { CommandV2 } from "@smart-ai/core/command"
-import { ModelV2 } from "@smart-ai/core/model"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { CommandV2 } from "@smartcode-ai/core/command"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { testEffect } from "./lib/effect"
 
 const it = testEffect(CommandV2.locationLayer)

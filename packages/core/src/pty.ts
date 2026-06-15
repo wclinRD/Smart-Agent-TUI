@@ -117,7 +117,7 @@ export interface Interface {
   readonly attach: (id: PtyID, input: AttachInput) => Effect.Effect<Attachment, NotFoundError | ExitedError>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/Pty") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/Pty") {}
 
 export const layer = Layer.effect(
   Service,

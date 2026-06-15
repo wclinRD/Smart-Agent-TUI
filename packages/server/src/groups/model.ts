@@ -1,5 +1,5 @@
-import { ModelV2 } from "@smart-ai/core/model"
-import { Location } from "@smart-ai/core/location"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { Location } from "@smartcode-ai/core/location"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { ServiceUnavailableError } from "../errors"

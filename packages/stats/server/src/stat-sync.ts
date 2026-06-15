@@ -1,7 +1,7 @@
 import * as NodeRuntime from "@effect/platform-node/NodeRuntime"
-import { Athena } from "@smart-ai/stats-core/athena"
-import { layer as statsLayer } from "@smart-ai/stats-core/runtime"
-import { syncStats } from "@smart-ai/stats-core/stat-sync"
+import { Athena } from "@smartcode-ai/stats-core/athena"
+import { layer as statsLayer } from "@smartcode-ai/stats-core/runtime"
+import { syncStats } from "@smartcode-ai/stats-core/stat-sync"
 import { Cause, Effect, Layer, Schedule } from "effect"
 
 const SYNC_INTERVAL = "1 hour"

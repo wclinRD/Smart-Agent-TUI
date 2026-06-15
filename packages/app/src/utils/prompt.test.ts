@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test"
-import type { Part } from "@smart-ai/sdk/v2"
+import type { Part } from "@smartcode-ai/sdk/v2"
 import { extractPromptFromParts } from "./prompt"
 
 describe("extractPromptFromParts", () => {

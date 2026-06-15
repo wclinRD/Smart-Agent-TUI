@@ -1,4 +1,4 @@
-import { SessionV2 } from "@smart-ai/core/session"
+import { SessionV2 } from "@smartcode-ai/core/session"
 import { DateTime, Effect } from "effect"
 import { HttpApiBuilder, HttpApiSchema } from "effect/unstable/httpapi"
 import { Api } from "../api"
@@ -10,7 +10,7 @@ import {
   SessionNotFoundError,
   UnknownError,
 } from "../errors"
-import { AbsolutePath } from "@smart-ai/core/schema"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
 
 const DefaultSessionsLimit = 50
 

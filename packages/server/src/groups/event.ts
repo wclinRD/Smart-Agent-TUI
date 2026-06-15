@@ -1,5 +1,5 @@
-import { EventV2 } from "@smart-ai/core/event"
-import { Location } from "@smart-ai/core/location"
+import { EventV2 } from "@smartcode-ai/core/event"
+import { Location } from "@smartcode-ai/core/location"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, HttpApiSchema, OpenApi } from "effect/unstable/httpapi"
 import { LocationQuery, locationQueryOpenApi, LocationMiddleware } from "./location"

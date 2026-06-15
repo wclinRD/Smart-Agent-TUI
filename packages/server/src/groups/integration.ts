@@ -1,5 +1,5 @@
-import { Integration } from "@smart-ai/core/integration"
-import { Location } from "@smart-ai/core/location"
+import { Integration } from "@smartcode-ai/core/integration"
+import { Location } from "@smartcode-ai/core/location"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, HttpApiSchema, OpenApi } from "effect/unstable/httpapi"
 import { InvalidRequestError } from "../errors"

@@ -1,5 +1,5 @@
 {
-  "name": "@smart-ai/app",
+  "name": "@smartcode-ai/app",
   "version": "1.17.7",
   "description": "",
   "type": "module",
@@ -43,9 +43,9 @@
   },
   "dependencies": {
     "@kobalte/core": "catalog:",
-    "@smart-ai/core": "workspace:*",
-    "@smart-ai/sdk": "workspace:*",
-    "@smart-ai/ui": "workspace:*",
+    "@smartcode-ai/core": "workspace:*",
+    "@smartcode-ai/sdk": "workspace:*",
+    "@smartcode-ai/ui": "workspace:*",
     "@sentry/solid": "catalog:",
     "@shikijs/transformers": "3.9.2",
     "@solid-primitives/active-element": "2.1.3",

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test"
 import { formatAssistantHeader, formatMessage, formatPart, formatTranscript } from "../../src/util/transcript"
-import type { AssistantMessage, Part, Provider, UserMessage } from "@smart-ai/sdk/v2"
+import type { AssistantMessage, Part, Provider, UserMessage } from "@smartcode-ai/sdk/v2"
 
 const providers: Provider[] = [
   {

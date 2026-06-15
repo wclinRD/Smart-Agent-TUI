@@ -1,11 +1,11 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { ModelV2 } from "@smart-ai/core/model"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { ProviderPlugins } from "@smart-ai/core/plugin/provider"
-import { OpenRouterPlugin } from "@smart-ai/core/plugin/provider/openrouter"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { ProviderPlugins } from "@smartcode-ai/core/plugin/provider"
+import { OpenRouterPlugin } from "@smartcode-ai/core/plugin/provider/openrouter"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { expectPluginRegistered, it, model, provider } from "./provider-helper"
 
 describe("OpenRouterPlugin", () => {

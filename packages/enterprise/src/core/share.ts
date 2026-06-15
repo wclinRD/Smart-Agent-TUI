@@ -1,5 +1,5 @@
-import { Message, Model, Part, Session, SnapshotFileDiff } from "@smart-ai/sdk/v2"
-import { iife } from "@smart-ai/core/util/iife"
+import { Message, Model, Part, Session, SnapshotFileDiff } from "@smartcode-ai/sdk/v2"
+import { iife } from "@smartcode-ai/core/util/iife"
 import z from "zod"
 import { Storage } from "./storage"
 

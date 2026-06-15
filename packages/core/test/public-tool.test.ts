@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test"
-import { Tool } from "@smart-ai/core/public"
+import { Tool } from "@smartcode-ai/core/public"
 import { Effect } from "effect"
 
 describe("public Tool API", () => {

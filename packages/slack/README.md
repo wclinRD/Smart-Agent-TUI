@@ -1,4 +1,4 @@
-# @smart-ai/slack
+# @smartcode-ai/slack
 
 Slack bot integration for smart that creates threaded conversations.
 

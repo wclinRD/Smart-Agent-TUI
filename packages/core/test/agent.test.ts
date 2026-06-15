@@ -1,9 +1,9 @@
 import { describe, expect } from "bun:test"
 import { Effect, Exit, Scope } from "effect"
-import { AgentV2 } from "@smart-ai/core/agent"
-import { Location } from "@smart-ai/core/location"
-import { AgentPlugin } from "@smart-ai/core/plugin/agent"
-import { AbsolutePath } from "@smart-ai/core/schema"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { Location } from "@smartcode-ai/core/location"
+import { AgentPlugin } from "@smartcode-ai/core/plugin/agent"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
 import { location } from "./fixture/location"
 import { testEffect } from "./lib/effect"
 

@@ -1,6 +1,6 @@
 import { describe, expect } from "bun:test"
 import { Cause, Deferred, Effect, Exit, Fiber, Layer, Scope } from "effect"
-import { SessionRunCoordinator } from "@smart-ai/core/session/run-coordinator"
+import { SessionRunCoordinator } from "@smartcode-ai/core/session/run-coordinator"
 import { testEffect } from "./lib/effect"
 
 const it = testEffect(Layer.empty)

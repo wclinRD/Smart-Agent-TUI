@@ -8,10 +8,10 @@ import type {
   QuestionRequest,
   Session,
   Todo,
-} from "@smart-ai/sdk/v2/client"
+} from "@smartcode-ai/sdk/v2/client"
 import { showToast } from "@/utils/toast"
-import { getFilename } from "@smart-ai/core/util/path"
-import { retry } from "@smart-ai/core/util/retry"
+import { getFilename } from "@smartcode-ai/core/util/path"
+import { retry } from "@smartcode-ai/core/util/retry"
 import { batch } from "solid-js"
 import { reconcile, type SetStoreFunction, type Store } from "solid-js/store"
 import type { State, VcsCache } from "./types"
@@ -19,7 +19,7 @@ import { cmp, normalizeAgentList, normalizeProviderList } from "./utils"
 import { formatServerError } from "@/utils/server-errors"
 import { QueryClient, queryOptions } from "@tanstack/solid-query"
 import { loadMcpQuery } from "../server-sync"
-import { NormalizedProviderListResponse } from "@smart-ai/ui/context"
+import { NormalizedProviderListResponse } from "@smartcode-ai/ui/context"
 import { ScopedKey, type ServerScope } from "@/utils/server-scope"
 
 type GlobalStore = {

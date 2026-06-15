@@ -1,5 +1,5 @@
 import { BrowserWindow } from "electron"
-import type { DesktopMenuAction } from "@smart-ai/app/desktop-menu"
+import type { DesktopMenuAction } from "@smartcode-ai/app/desktop-menu"
 import { createMainWindow, updateTitlebar } from "./windows"
 
 export type DesktopMenuActionHandlers = Partial<{

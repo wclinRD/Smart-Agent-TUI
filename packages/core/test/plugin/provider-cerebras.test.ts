@@ -1,9 +1,9 @@
 import { describe, expect, mock } from "bun:test"
 import { Effect } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { CerebrasPlugin } from "@smart-ai/core/plugin/provider/cerebras"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { CerebrasPlugin } from "@smartcode-ai/core/plugin/provider/cerebras"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { it, model } from "./provider-helper"
 
 const cerebrasOptions: Record<string, unknown>[] = []

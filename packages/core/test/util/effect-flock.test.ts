@@ -5,10 +5,10 @@ import path from "path"
 import os from "os"
 import { Cause, Effect, Exit, Layer } from "effect"
 import { testEffect } from "../lib/effect"
-import { FSUtil } from "@smart-ai/core/fs-util"
-import { EffectFlock } from "@smart-ai/core/util/effect-flock"
-import { Global } from "@smart-ai/core/global"
-import { Hash } from "@smart-ai/core/util/hash"
+import { FSUtil } from "@smartcode-ai/core/fs-util"
+import { EffectFlock } from "@smartcode-ai/core/util/effect-flock"
+import { Global } from "@smartcode-ai/core/global"
+import { Hash } from "@smartcode-ai/core/util/hash"
 
 function lock(dir: string, key: string) {
   return path.join(dir, Hash.fast(key) + ".lock")

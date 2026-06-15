@@ -1,5 +1,5 @@
-import { Icon } from "@smart-ai/ui/v2/icon"
-import { Popover } from "@smart-ai/ui/popover"
+import { Icon } from "@smartcode-ai/ui/v2/icon"
+import { Popover } from "@smartcode-ai/ui/popover"
 import { createSignal, Show } from "solid-js"
 import { createStore } from "solid-js/store"
 

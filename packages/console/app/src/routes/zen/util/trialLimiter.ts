@@ -1,7 +1,7 @@
-import { Database, eq, sql } from "@smart-ai/console-core/drizzle/index.js"
-import { IpTable } from "@smart-ai/console-core/schema/ip.sql.js"
+import { Database, eq, sql } from "@smartcode-ai/console-core/drizzle/index.js"
+import { IpTable } from "@smartcode-ai/console-core/schema/ip.sql.js"
 import { UsageInfo } from "./provider/provider"
-import { Subscription } from "@smart-ai/console-core/subscription.js"
+import { Subscription } from "@smartcode-ai/console-core/subscription.js"
 
 export function createTrialLimiter(trialProviders: string[] | undefined, ip: string) {
   if (!trialProviders) return

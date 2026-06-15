@@ -58,7 +58,7 @@ export const hasNativeBinding = () => !!watcher()
 
 export interface Interface {}
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/FileWatcher") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/FileWatcher") {}
 
 export const layer = Layer.effect(
   Service,

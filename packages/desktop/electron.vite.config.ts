@@ -1,6 +1,6 @@
 import { sentryVitePlugin } from "@sentry/vite-plugin"
 import { defineConfig } from "electron-vite"
-import appPlugin from "@smart-ai/app/vite"
+import appPlugin from "@smartcode-ai/app/vite"
 import * as fs from "node:fs/promises"
 
 const SMART_SERVER_DIST = "../smart/dist/node"

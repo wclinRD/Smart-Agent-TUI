@@ -1,5 +1,5 @@
 import { AwsClient } from "aws4fetch"
-import { lazy } from "@smart-ai/core/util/lazy"
+import { lazy } from "@smartcode-ai/core/util/lazy"
 
 export namespace Storage {
   export interface Adapter {

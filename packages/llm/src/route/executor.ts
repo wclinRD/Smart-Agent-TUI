@@ -30,7 +30,7 @@ export interface Interface {
   ) => Effect.Effect<HttpClientResponse.HttpClientResponse, LLMError>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/LLM/RequestExecutor") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/LLM/RequestExecutor") {}
 
 const BODY_LIMIT = 16_384
 const MAX_RETRIES = 2

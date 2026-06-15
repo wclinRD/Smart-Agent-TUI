@@ -250,7 +250,7 @@ export interface Interface {
   }
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/Integration") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/Integration") {}
 
 enableMapSet()
 

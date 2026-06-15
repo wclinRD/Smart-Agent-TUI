@@ -25,7 +25,7 @@ export interface Interface {
   readonly entries: () => ReadonlyMap<string, Entry>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/ApplicationTools") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/ApplicationTools") {}
 
 enableMapSet()
 

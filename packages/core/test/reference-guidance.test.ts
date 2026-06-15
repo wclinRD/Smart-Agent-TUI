@@ -1,10 +1,10 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { AbsolutePath } from "@smart-ai/core/schema"
-import { PluginBoot } from "@smart-ai/core/plugin/boot"
-import { Reference } from "@smart-ai/core/reference"
-import { ReferenceGuidance } from "@smart-ai/core/reference/guidance"
-import { SystemContext } from "@smart-ai/core/system-context/index"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
+import { PluginBoot } from "@smartcode-ai/core/plugin/boot"
+import { Reference } from "@smartcode-ai/core/reference"
+import { ReferenceGuidance } from "@smartcode-ai/core/reference/guidance"
+import { SystemContext } from "@smartcode-ai/core/system-context/index"
 import { it } from "./lib/effect"
 
 describe("ReferenceGuidance", () => {

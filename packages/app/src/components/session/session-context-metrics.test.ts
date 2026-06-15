@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test"
-import type { Message } from "@smart-ai/sdk/v2/client"
+import type { Message } from "@smartcode-ai/sdk/v2/client"
 import { getSessionContextMetrics } from "./session-context-metrics"
 
 const assistant = (

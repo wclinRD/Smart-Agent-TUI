@@ -1,4 +1,4 @@
-import { centsToMicroCents } from "@smart-ai/console-core/util/price.js"
+import { centsToMicroCents } from "@smartcode-ai/console-core/util/price.js"
 import { buildRateLimitKey, getRedis } from "./redis"
 
 export function createProviderBudgetTracker(

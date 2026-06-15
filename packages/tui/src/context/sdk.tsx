@@ -1,6 +1,6 @@
-import { createOpencodeClient } from "@smart-ai/sdk/v2"
-import type { GlobalEvent } from "@smart-ai/sdk/v2"
-import { Flag } from "@smart-ai/core/flag/flag"
+import { createOpencodeClient } from "@smartcode-ai/sdk/v2"
+import type { GlobalEvent } from "@smartcode-ai/sdk/v2"
+import { Flag } from "@smartcode-ai/core/flag/flag"
 import { createSimpleContext } from "./helper"
 import { batch, onCleanup, onMount } from "solid-js"
 

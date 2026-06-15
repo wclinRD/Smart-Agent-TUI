@@ -1,5 +1,5 @@
-import { and, Database, inArray, sql } from "@smart-ai/console-core/drizzle/index.js"
-import { ModelTpsRateLimitTable } from "@smart-ai/console-core/schema/ip.sql.js"
+import { and, Database, inArray, sql } from "@smartcode-ai/console-core/drizzle/index.js"
+import { ModelTpsRateLimitTable } from "@smartcode-ai/console-core/schema/ip.sql.js"
 import { UsageInfo } from "./provider/provider"
 
 export function createModelTpsLimiter(providers: { id: string; model: string; tpsGoal?: number }[]) {

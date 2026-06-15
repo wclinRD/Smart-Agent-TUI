@@ -1,5 +1,5 @@
-import { FileSystem } from "@smart-ai/core/filesystem"
-import { RelativePath } from "@smart-ai/core/schema"
+import { FileSystem } from "@smartcode-ai/core/filesystem"
+import { RelativePath } from "@smartcode-ai/core/schema"
 import { Effect } from "effect"
 import { HttpServerResponse } from "effect/unstable/http"
 import { HttpApiBuilder } from "effect/unstable/httpapi"

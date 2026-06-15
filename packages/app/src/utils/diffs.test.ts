@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test"
-import type { SnapshotFileDiff } from "@smart-ai/sdk/v2"
-import type { Message } from "@smart-ai/sdk/v2/client"
+import type { SnapshotFileDiff } from "@smartcode-ai/sdk/v2"
+import type { Message } from "@smartcode-ai/sdk/v2/client"
 import { diffs, message } from "./diffs"
 
 const item = {

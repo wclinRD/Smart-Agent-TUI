@@ -1,5 +1,5 @@
 {
-  "name": "@smart-ai/console-mail",
+  "name": "@smartcode-ai/console-mail",
   "version": "1.17.7",
   "dependencies": {
     "@jsx-email/all": "2.2.3",

@@ -1,12 +1,12 @@
 import path from "path"
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { AgentV2 } from "@smart-ai/core/agent"
-import { PluginBoot } from "@smart-ai/core/plugin/boot"
-import { AbsolutePath } from "@smart-ai/core/schema"
-import { SkillV2 } from "@smart-ai/core/skill"
-import { SystemContext } from "@smart-ai/core/system-context"
-import { SkillGuidance } from "@smart-ai/core/skill/guidance"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { PluginBoot } from "@smartcode-ai/core/plugin/boot"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
+import { SkillV2 } from "@smartcode-ai/core/skill"
+import { SystemContext } from "@smartcode-ai/core/system-context"
+import { SkillGuidance } from "@smartcode-ai/core/skill/guidance"
 import { it } from "../lib/effect"
 
 const build = AgentV2.ID.make("build")

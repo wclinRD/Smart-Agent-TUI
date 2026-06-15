@@ -41,14 +41,14 @@ import { AppProcess } from "./process"
 import { SessionStore } from "./session/store"
 import { SessionTodo } from "./session/todo"
 import { QuestionV2 } from "./question"
-import { LLMClient } from "@smart-ai/llm"
-import { RequestExecutor } from "@smart-ai/llm/route"
+import { LLMClient } from "@smartcode-ai/llm"
+import { RequestExecutor } from "@smartcode-ai/llm/route"
 import * as SessionRunnerLLM from "./session/runner/llm"
 import { SessionRunnerModel } from "./session/runner/model"
 import { SystemContextBuiltIns } from "./system-context/builtins"
 import { FetchHttpClient } from "effect/unstable/http"
 
-export class LocationServiceMap extends LayerMap.Service<LocationServiceMap>()("@smart/example/LocationServiceMap", {
+export class LocationServiceMap extends LayerMap.Service<LocationServiceMap>()("@smartcode/example/LocationServiceMap", {
   lookup: (ref: Location.Ref) => {
     const boot = Layer.effectDiscard(
       Effect.logInfo("booting location services", { directory: ref.directory, workspaceID: ref.workspaceID }),

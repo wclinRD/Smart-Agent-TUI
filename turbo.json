@@ -13,11 +13,11 @@
       "outputs": [],
       "passThroughEnv": ["*"]
     },
-    "@smart-ai/app#test": {
+    "@smartcode-ai/app#test": {
       "dependsOn": ["^build"],
       "outputs": []
     },
-    "@smart-ai/ui#test": {
+    "@smartcode-ai/ui#test": {
       "dependsOn": ["^build"],
       "outputs": []
     }

@@ -29,25 +29,25 @@ const tools: readonly ToolFixture[] = [
   {
     icon: "✱",
     label:
-      'Grep "OPENCODE.*DB|database|sqlite|drizzle|dev.*db|data.*dir|xdg|APPDATA" in packages/smart/src (151 matches)',
+      'Grep "OPENCODE.*DB|database|sqlite|drizzle|dev.*db|data.*dir|xdg|APPDATA" in packages/smartcode/src (151 matches)',
   },
   {
     icon: "✱",
-    label: 'Glob "**/*db*" in packages/smart (6 matches)',
+    label: 'Glob "**/*db*" in packages/smartcode (6 matches)',
   },
   {
     icon: "→",
-    label: "Read packages/smart/src/storage/db.ts [offset=1, limit=130]",
+    label: "Read packages/smartcode/src/storage/db.ts [offset=1, limit=130]",
   },
   {
     icon: "→",
-    label: "Read packages/smart/src/index.ts [offset=1, limit=100]",
+    label: "Read packages/smartcode/src/index.ts [offset=1, limit=100]",
     error: "No LSP server available for this file type.",
   },
   {
     icon: "✱",
     label:
-      'Grep "export const SMART_DB|SMART_DB|SMART_DEV|Global\\.Path\\.data|data =" in packages/smart/src (115 matches)',
+      'Grep "export const SMART_DB|SMART_DB|SMART_DEV|Global\\.Path\\.data|data =" in packages/smartcode/src (115 matches)',
   },
 ] as const
 

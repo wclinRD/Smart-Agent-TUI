@@ -1,6 +1,6 @@
-import type { UpdaterState } from "@smart-ai/app/updater"
+import type { UpdaterState } from "@smartcode-ai/app/updater"
 
-export type { UpdaterState } from "@smart-ai/app/updater"
+export type { UpdaterState } from "@smartcode-ai/app/updater"
 
 export type UpdaterReadyRecord = { version: string }
 

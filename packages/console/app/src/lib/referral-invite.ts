@@ -1,5 +1,5 @@
-import { Actor } from "@smart-ai/console-core/actor.js"
-import { Referral } from "@smart-ai/console-core/referral.js"
+import { Actor } from "@smartcode-ai/console-core/actor.js"
+import { Referral } from "@smartcode-ai/console-core/referral.js"
 import { getRequestEvent } from "solid-js/web"
 
 const REFERRAL_COOKIE = "oc_referral"

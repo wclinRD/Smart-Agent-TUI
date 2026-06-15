@@ -1,9 +1,9 @@
 import { describe, expect, mock } from "bun:test"
 import { Effect, Layer } from "effect"
-import { AISDK } from "@smart-ai/core/aisdk"
-import { EventV2 } from "@smart-ai/core/event"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { DeepInfraPlugin } from "@smart-ai/core/plugin/provider/deepinfra"
+import { AISDK } from "@smartcode-ai/core/aisdk"
+import { EventV2 } from "@smartcode-ai/core/event"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { DeepInfraPlugin } from "@smartcode-ai/core/plugin/provider/deepinfra"
 import { testEffect } from "../lib/effect"
 import { it, model } from "./provider-helper"
 

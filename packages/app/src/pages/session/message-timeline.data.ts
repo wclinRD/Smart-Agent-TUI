@@ -1,6 +1,6 @@
 import { parseCommentNote, readCommentMetadata } from "@/utils/comment-note"
-import { AssistantMessage, Part, SessionStatus, SnapshotFileDiff, UserMessage } from "@smart-ai/sdk/v2"
-import { groupParts, PartGroup, renderable } from "@smart-ai/ui/message-part"
+import { AssistantMessage, Part, SessionStatus, SnapshotFileDiff, UserMessage } from "@smartcode-ai/sdk/v2"
+import { groupParts, PartGroup, renderable } from "@smartcode-ai/ui/message-part"
 import { Data, Equal } from "effect"
 
 export type SummaryDiff = SnapshotFileDiff & { file: string }

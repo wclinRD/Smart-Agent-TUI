@@ -1,4 +1,4 @@
-import type { FileNode } from "@smart-ai/sdk/v2"
+import type { FileNode } from "@smartcode-ai/sdk/v2"
 
 type WatcherEvent = {
   type: string

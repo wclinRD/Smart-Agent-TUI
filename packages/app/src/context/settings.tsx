@@ -1,6 +1,6 @@
 import { createStore, reconcile } from "solid-js/store"
 import { createEffect, createMemo } from "solid-js"
-import { createSimpleContext } from "@smart-ai/ui/context"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
 import { persisted } from "@/utils/persist"
 
 export interface NotificationSettings {

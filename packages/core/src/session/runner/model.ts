@@ -1,10 +1,10 @@
 export * as SessionRunnerModel from "./model"
 
-import { type Model } from "@smart-ai/llm"
-import * as AnthropicMessages from "@smart-ai/llm/protocols/anthropic-messages"
-import * as OpenAICompatibleChat from "@smart-ai/llm/protocols/openai-compatible-chat"
-import * as OpenAIResponses from "@smart-ai/llm/protocols/openai-responses"
-import { Auth, type AnyRoute } from "@smart-ai/llm/route"
+import { type Model } from "@smartcode-ai/llm"
+import * as AnthropicMessages from "@smartcode-ai/llm/protocols/anthropic-messages"
+import * as OpenAICompatibleChat from "@smartcode-ai/llm/protocols/openai-compatible-chat"
+import * as OpenAIResponses from "@smartcode-ai/llm/protocols/openai-responses"
+import { Auth, type AnyRoute } from "@smartcode-ai/llm/route"
 import { Context, Effect, Layer, Option, Schema } from "effect"
 import { produce } from "immer"
 import { Catalog } from "../../catalog"
@@ -43,7 +43,7 @@ export interface Interface {
   readonly resolve: (session: SessionSchema.Info) => Effect.Effect<Model, Error>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/SessionRunnerModel") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/SessionRunnerModel") {}
 
 /** Test or embedding seam for supplying a model resolver directly. */
 export const layerWith = (resolve: Interface["resolve"]) => Layer.succeed(Service, Service.of({ resolve }))

@@ -1,10 +1,10 @@
-import { SessionMessage } from "@smart-ai/core/session/message"
-import { SessionInput } from "@smart-ai/core/session/input"
-import { Prompt } from "@smart-ai/core/session/prompt"
-import { SessionV2 } from "@smart-ai/core/session"
-import { ProjectV2 } from "@smart-ai/core/project"
-import { AbsolutePath, PositiveInt, RelativePath, withStatics } from "@smart-ai/core/schema"
-import { WorkspaceV2 } from "@smart-ai/core/workspace"
+import { SessionMessage } from "@smartcode-ai/core/session/message"
+import { SessionInput } from "@smartcode-ai/core/session/input"
+import { Prompt } from "@smartcode-ai/core/session/prompt"
+import { SessionV2 } from "@smartcode-ai/core/session"
+import { ProjectV2 } from "@smartcode-ai/core/project"
+import { AbsolutePath, PositiveInt, RelativePath, withStatics } from "@smartcode-ai/core/schema"
+import { WorkspaceV2 } from "@smartcode-ai/core/workspace"
 import { Schema, Struct } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, HttpApiSchema, OpenApi } from "effect/unstable/httpapi"
 import {
@@ -16,9 +16,9 @@ import {
   UnknownError,
 } from "../errors"
 import { SessionLocationMiddleware } from "../middleware/session-location"
-import { AgentV2 } from "@smart-ai/core/agent"
-import { ModelV2 } from "@smart-ai/core/model"
-import { Location } from "@smart-ai/core/location"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { Location } from "@smartcode-ai/core/location"
 
 const SessionsQueryFields = {
   workspace: WorkspaceV2.ID.pipe(Schema.optional),

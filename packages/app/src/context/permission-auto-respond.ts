@@ -1,4 +1,4 @@
-import { base64Encode } from "@smart-ai/core/util/encode"
+import { base64Encode } from "@smartcode-ai/core/util/encode"
 
 export function acceptKey(sessionID: string, directory?: string) {
   if (!directory) return sessionID

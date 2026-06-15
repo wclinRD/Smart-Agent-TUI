@@ -1,5 +1,5 @@
-import type { SnapshotFileDiff, VcsFileDiff } from "@smart-ai/sdk/v2"
-import type { Message } from "@smart-ai/sdk/v2/client"
+import type { SnapshotFileDiff, VcsFileDiff } from "@smartcode-ai/sdk/v2"
+import type { Message } from "@smartcode-ai/sdk/v2/client"
 
 type Diff = SnapshotFileDiff | VcsFileDiff
 

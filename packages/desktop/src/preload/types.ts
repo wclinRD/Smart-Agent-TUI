@@ -1,6 +1,6 @@
-import type { DesktopMenuAction } from "@smart-ai/app/desktop-menu"
-import type { WslServersPlatform } from "@smart-ai/app/wsl/types"
-import type { UpdaterState } from "@smart-ai/app/updater"
+import type { DesktopMenuAction } from "@smartcode-ai/app/desktop-menu"
+import type { WslServersPlatform } from "@smartcode-ai/app/wsl/types"
+import type { UpdaterState } from "@smartcode-ai/app/updater"
 export type {
   WslDistroProbe,
   WslInstalledDistro,
@@ -13,7 +13,7 @@ export type {
   WslServerRuntime,
   WslServersEvent,
   WslServersState,
-} from "@smart-ai/app/wsl/types"
+} from "@smartcode-ai/app/wsl/types"
 
 export type ServerReadyData = {
   url: string

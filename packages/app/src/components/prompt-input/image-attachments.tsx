@@ -1,6 +1,6 @@
 import { Component, For, Show } from "solid-js"
-import { Icon } from "@smart-ai/ui/icon"
-import { Tooltip } from "@smart-ai/ui/tooltip"
+import { Icon } from "@smartcode-ai/ui/icon"
+import { Tooltip } from "@smartcode-ai/ui/tooltip"
 import type { ImageAttachmentPart } from "@/context/prompt"
 
 type PromptImageAttachmentsProps = {

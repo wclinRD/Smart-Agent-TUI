@@ -1,5 +1,5 @@
-import "@smart-ai/ui/styles/tailwind"
-import "@smart-ai/ui/v2/styles/tailwind.css"
+import "@smartcode-ai/ui/styles/tailwind"
+import "@smartcode-ai/ui/v2/styles/tailwind.css"
 
 import { createEffect, onCleanup, onMount } from "solid-js"
 import addonA11y from "@storybook/addon-a11y"
@@ -8,10 +8,10 @@ import { MetaProvider } from "@solidjs/meta"
 import { addons } from "storybook/preview-api"
 import { GLOBALS_UPDATED } from "storybook/internal/core-events"
 import { createJSXDecorator, definePreview } from "storybook-solidjs-vite"
-import { DialogProvider } from "@smart-ai/ui/context/dialog"
-import { MarkedProvider } from "@smart-ai/ui/context/marked"
-import { ThemeProvider, useTheme, type ColorScheme } from "@smart-ai/ui/theme"
-import { Font } from "@smart-ai/ui/font"
+import { DialogProvider } from "@smartcode-ai/ui/context/dialog"
+import { MarkedProvider } from "@smartcode-ai/ui/context/marked"
+import { ThemeProvider, useTheme, type ColorScheme } from "@smartcode-ai/ui/theme"
+import { Font } from "@smartcode-ai/ui/font"
 
 function resolveScheme(value: unknown): ColorScheme {
   if (value === "light" || value === "dark" || value === "system") return value

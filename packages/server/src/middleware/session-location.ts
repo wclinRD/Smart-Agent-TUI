@@ -1,10 +1,10 @@
-import { Database } from "@smart-ai/core/database/database"
-import { LocationServiceMap } from "@smart-ai/core/location-layer"
-import { Location } from "@smart-ai/core/location"
-import { AbsolutePath } from "@smart-ai/core/schema"
-import { SessionV2 } from "@smart-ai/core/session"
-import { SessionTable } from "@smart-ai/core/session/sql"
-import { WorkspaceV2 } from "@smart-ai/core/workspace"
+import { Database } from "@smartcode-ai/core/database/database"
+import { LocationServiceMap } from "@smartcode-ai/core/location-layer"
+import { Location } from "@smartcode-ai/core/location"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
+import { SessionV2 } from "@smartcode-ai/core/session"
+import { SessionTable } from "@smartcode-ai/core/session/sql"
+import { WorkspaceV2 } from "@smartcode-ai/core/workspace"
 import { eq } from "drizzle-orm"
 import { Effect, Layer, Schema } from "effect"
 import { HttpRouter } from "effect/unstable/http"
@@ -17,7 +17,7 @@ export class SessionLocationMiddleware extends HttpApiMiddleware.Service<
   {
     provides: LocationServices
   }
->()("@smart/HttpApiSessionLocation", {
+>()("@smartcode/HttpApiSessionLocation", {
   error: [InvalidRequestError, SessionNotFoundError],
 }) {}
 

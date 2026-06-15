@@ -1,6 +1,6 @@
 export * as Database from "./database"
 
-import { EffectDrizzleSqlite } from "@smart-ai/effect-drizzle-sqlite"
+import { EffectDrizzleSqlite } from "@smartcode-ai/effect-drizzle-sqlite"
 import { layer as sqliteLayer } from "#sqlite"
 import { Context, Effect, Layer } from "effect"
 import { Global } from "../global"
@@ -17,7 +17,7 @@ export interface Interface {
   db: DatabaseShape
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/storage/Database") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/storage/Database") {}
 
 export const layer = Layer.effect(
   Service,

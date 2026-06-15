@@ -1,11 +1,11 @@
 import { describe, expect } from "bun:test"
 import { Effect, Exit, Layer, Scope } from "effect"
-import { AbsolutePath } from "@smart-ai/core/schema"
-import { Global } from "@smart-ai/core/global"
-import { Reference } from "@smart-ai/core/reference"
-import { Repository } from "@smart-ai/core/repository"
-import { RepositoryCache } from "@smart-ai/core/repository-cache"
-import { EventV2 } from "@smart-ai/core/event"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
+import { Global } from "@smartcode-ai/core/global"
+import { Reference } from "@smartcode-ai/core/reference"
+import { Repository } from "@smartcode-ai/core/repository"
+import { RepositoryCache } from "@smartcode-ai/core/repository-cache"
+import { EventV2 } from "@smartcode-ai/core/event"
 import { it } from "./lib/effect"
 
 const cache = Layer.mock(RepositoryCache.Service, {

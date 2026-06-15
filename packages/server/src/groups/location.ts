@@ -1,8 +1,8 @@
-import { Location } from "@smart-ai/core/location"
-import { LocationServiceMap } from "@smart-ai/core/location-layer"
-import { FileSystem } from "@smart-ai/core/filesystem"
-import { AbsolutePath } from "@smart-ai/core/schema"
-import { WorkspaceV2 } from "@smart-ai/core/workspace"
+import { Location } from "@smartcode-ai/core/location"
+import { LocationServiceMap } from "@smartcode-ai/core/location-layer"
+import { FileSystem } from "@smartcode-ai/core/filesystem"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
+import { WorkspaceV2 } from "@smartcode-ai/core/workspace"
 import { Effect, Layer, Schema } from "effect"
 import { HttpServerRequest } from "effect/unstable/http"
 import { HttpApiEndpoint, HttpApiGroup, HttpApiMiddleware, OpenApi } from "effect/unstable/httpapi"
@@ -52,7 +52,7 @@ export class LocationMiddleware extends HttpApiMiddleware.Service<
   {
     provides: LocationServices
   }
->()("@smart/HttpApiLocation") {}
+>()("@smartcode/HttpApiLocation") {}
 
 export const LocationGroup = HttpApiGroup.make("server.location")
   .add(

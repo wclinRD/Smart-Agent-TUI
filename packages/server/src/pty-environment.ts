@@ -6,7 +6,7 @@ export interface Interface {
   readonly get: (input: { directory: string; cwd: string }) => Effect.Effect<Record<string, string>>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/ServerPtyEnvironment") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/ServerPtyEnvironment") {}
 
 export const defaultLayer = Layer.succeed(
   Service,

@@ -1,5 +1,5 @@
-@import "@smart-ai/ui/styles/tailwind";
-@import "@smart-ai/ui/v2/styles/tailwind.css";
+@import "@smartcode-ai/ui/styles/tailwind";
+@import "@smartcode-ai/ui/v2/styles/tailwind.css";
 
 @font-face {
   font-family: "JetBrainsMono Nerd Font Mono";

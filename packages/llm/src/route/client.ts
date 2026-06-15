@@ -162,7 +162,7 @@ export interface GenerateMethod {
   (request: LLMRequest): Effect.Effect<LLMResponse, LLMError>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/LLMClient") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/LLMClient") {}
 
 const resolveRequestOptions = (request: LLMRequest) =>
   LLMRequest.update(request, {

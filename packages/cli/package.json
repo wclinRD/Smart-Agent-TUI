@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@smart-ai/cli",
+  "name": "@smartcode-ai/cli",
   "version": "1.17.7",
   "type": "module",
   "license": "MIT",
@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "@effect/platform-node": "catalog:",
-    "@smart-ai/core": "workspace:*",
-    "@smart-ai/sdk": "workspace:*",
-    "@smart-ai/server": "workspace:*",
-    "@smart-ai/tui": "workspace:*",
+    "@smartcode-ai/core": "workspace:*",
+    "@smartcode-ai/sdk": "workspace:*",
+    "@smartcode-ai/server": "workspace:*",
+    "@smartcode-ai/tui": "workspace:*",
     "@opentui/core": "catalog:",
     "@opentui/solid": "catalog:",
     "@parcel/watcher": "2.5.1",
@@ -28,7 +28,7 @@
     "solid-js": "catalog:"
   },
   "devDependencies": {
-    "@smart-ai/script": "workspace:*",
+    "@smartcode-ai/script": "workspace:*",
     "@tsconfig/bun": "catalog:",
     "@types/bun": "catalog:",
     "@typescript/native-preview": "catalog:"

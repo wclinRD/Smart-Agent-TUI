@@ -1,11 +1,11 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { Integration } from "@smart-ai/core/integration"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { ProviderPlugins } from "@smart-ai/core/plugin/provider"
-import { LLMGatewayPlugin } from "@smart-ai/core/plugin/provider/llmgateway"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { Integration } from "@smartcode-ai/core/integration"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { ProviderPlugins } from "@smartcode-ai/core/plugin/provider"
+import { LLMGatewayPlugin } from "@smartcode-ai/core/plugin/provider/llmgateway"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { expectPluginRegistered, it, provider } from "./provider-helper"
 
 describe("LLMGatewayPlugin", () => {

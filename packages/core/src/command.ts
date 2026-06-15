@@ -32,7 +32,7 @@ export interface Interface {
   readonly list: () => Effect.Effect<Info[]>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/Command") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/Command") {}
 
 export const layer = Layer.effect(
   Service,

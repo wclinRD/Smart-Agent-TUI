@@ -1,6 +1,6 @@
 /** @jsxImportSource @opentui/solid */
 import { expect, test } from "bun:test"
-import type { GlobalEvent } from "@smart-ai/sdk/v2"
+import type { GlobalEvent } from "@smartcode-ai/sdk/v2"
 import { tmpdir } from "../../../fixture/fixture"
 import { json, mount, wait } from "./sync-fixture"
 
@@ -12,7 +12,7 @@ const session = {
   title: "race",
   time: { created: 0, updated: 0 },
   version: "1.15.13",
-  directory: "/tmp/smart/packages/smart",
+  directory: "/tmp/smart/packages/smartcode",
 }
 const assistant = {
   id: messageID,

@@ -1,11 +1,11 @@
-import { Resource } from "@smart-ai/console-resource"
-import { Actor } from "@smart-ai/console-core/actor.js"
+import { Resource } from "@smartcode-ai/console-resource"
+import { Actor } from "@smartcode-ai/console-core/actor.js"
 import { action, json, query } from "@solidjs/router"
 import { withActor } from "~/context/auth.withActor"
-import { Billing } from "@smart-ai/console-core/billing.js"
-import { and, Database, desc, eq, isNull } from "@smart-ai/console-core/drizzle/index.js"
-import { WorkspaceTable } from "@smart-ai/console-core/schema/workspace.sql.js"
-import { UserTable } from "@smart-ai/console-core/schema/user.sql.js"
+import { Billing } from "@smartcode-ai/console-core/billing.js"
+import { and, Database, desc, eq, isNull } from "@smartcode-ai/console-core/drizzle/index.js"
+import { WorkspaceTable } from "@smartcode-ai/console-core/schema/workspace.sql.js"
+import { UserTable } from "@smartcode-ai/console-core/schema/user.sql.js"
 
 export function formatDateForTable(date: Date) {
   const options: Intl.DateTimeFormatOptions = {

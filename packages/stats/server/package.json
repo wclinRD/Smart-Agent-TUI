@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@smart-ai/stats-server",
+  "name": "@smartcode-ai/stats-server",
   "version": "1.17.7",
   "private": true,
   "type": "module",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@aws-sdk/client-firehose": "3.933.0",
     "@effect/platform-node": "catalog:",
-    "@smart-ai/stats-core": "workspace:*",
+    "@smartcode-ai/stats-core": "workspace:*",
     "effect": "catalog:",
     "sst": "catalog:"
   },

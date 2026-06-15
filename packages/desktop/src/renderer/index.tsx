@@ -13,8 +13,8 @@ import {
   ServerConnection,
   useCommand,
   useWslServers,
-} from "@smart-ai/app"
-import type { UpdaterState } from "@smart-ai/app/updater"
+} from "@smartcode-ai/app"
+import type { UpdaterState } from "@smartcode-ai/app/updater"
 import * as Sentry from "@sentry/solid"
 import type { AsyncStorage } from "@solid-primitives/storage"
 import { MemoryRouter } from "@solidjs/router"
@@ -26,8 +26,8 @@ import { initializationData, initializationReady } from "./initialization"
 import { resetZoom, setPinchZoomEnabled, webviewZoom, zoomIn, zoomOut } from "./webview-zoom"
 import { availableStartupServer, readyWslConnections } from "./wsl/connections"
 import "./styles.css"
-import { Splash } from "@smart-ai/ui/logo"
-import { useTheme } from "@smart-ai/ui/theme/context"
+import { Splash } from "@smartcode-ai/ui/logo"
+import { useTheme } from "@smartcode-ai/ui/theme/context"
 
 const root = document.getElementById("root")
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {

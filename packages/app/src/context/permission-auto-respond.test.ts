@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test"
-import type { PermissionRequest, Session } from "@smart-ai/sdk/v2/client"
-import { base64Encode } from "@smart-ai/core/util/encode"
+import type { PermissionRequest, Session } from "@smartcode-ai/sdk/v2/client"
+import { base64Encode } from "@smartcode-ai/core/util/encode"
 import { autoRespondsPermission, isDirectoryAutoAccepting } from "./permission-auto-respond"
 
 const session = (input: { id: string; parentID?: string }) =>

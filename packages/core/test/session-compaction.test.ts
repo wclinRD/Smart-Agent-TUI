@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import { SessionCompaction } from "@smart-ai/core/session/compaction"
+import { SessionCompaction } from "@smartcode-ai/core/session/compaction"
 
 test("compaction describes tool media without embedding base64", () => {
   const base64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB"

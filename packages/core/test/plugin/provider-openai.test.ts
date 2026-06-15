@@ -1,11 +1,11 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { Integration } from "@smart-ai/core/integration"
-import { ModelV2 } from "@smart-ai/core/model"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { OpenAIPlugin } from "@smart-ai/core/plugin/provider/openai"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { Integration } from "@smartcode-ai/core/integration"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { OpenAIPlugin } from "@smartcode-ai/core/plugin/provider/openai"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { fakeSelectorSdk, it, model, provider } from "./provider-helper"
 
 function add(plugin: PluginV2.Interface, integrations: Integration.Interface) {

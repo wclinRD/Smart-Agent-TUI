@@ -2,6 +2,6 @@
   "callID": "call_66e21534b53649ee8b890134",
   "sessionID": "ses_137fea6fbffeuk3V8y6Zh2y0KN",
   "tool": "bash",
-  "fullOutput": "packages/app/\npackages/cli/\npackages/console/\npackages/containers/\npackages/core/\npackages/desktop/\npackages/docs/\npackages/effect-drizzle-sqlite/\npackages/effect-sqlite-node/\npackages/enterprise/\npackages/function/\npackages/http-recorder/\npackages/identity/\npackages/llm/\npackages/smart/\npackages/plugin/\npackages/script/\npackages/sdk/\npackages/server/\npackages/slack/\npackages/stats/\npackages/storybook/\npackages/tui/\npackages/ui/\npackages/web/\n",
+  "fullOutput": "packages/app/\npackages/cli/\npackages/console/\npackages/containers/\npackages/core/\npackages/desktop/\npackages/docs/\npackages/effect-drizzle-sqlite/\npackages/effect-sqlite-node/\npackages/enterprise/\npackages/function/\npackages/http-recorder/\npackages/identity/\npackages/llm/\npackages/smartcode/\npackages/plugin/\npackages/script/\npackages/sdk/\npackages/server/\npackages/slack/\npackages/stats/\npackages/storybook/\npackages/tui/\npackages/ui/\npackages/web/\n",
   "timestamp": 1781472187693
 }

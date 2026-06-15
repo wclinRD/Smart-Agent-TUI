@@ -41,7 +41,7 @@ export interface Interface {
   >
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/Image") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/Image") {}
 
 export const layer = Layer.effect(
   Service,

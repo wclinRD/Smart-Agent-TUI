@@ -1,16 +1,16 @@
 import { Router } from "@solidjs/router"
 import { FileRoutes } from "@solidjs/start/router"
-import { Font } from "@smart-ai/ui/font"
+import { Font } from "@smartcode-ai/ui/font"
 import { MetaProvider } from "@solidjs/meta"
-import { MarkedProvider } from "@smart-ai/ui/context/marked"
-import { DialogProvider } from "@smart-ai/ui/context/dialog"
-import { I18nProvider, type UiI18nParams } from "@smart-ai/ui/context"
-import { dict as uiEn } from "@smart-ai/ui/i18n/en"
-import { dict as uiZh } from "@smart-ai/ui/i18n/zh"
+import { MarkedProvider } from "@smartcode-ai/ui/context/marked"
+import { DialogProvider } from "@smartcode-ai/ui/context/dialog"
+import { I18nProvider, type UiI18nParams } from "@smartcode-ai/ui/context"
+import { dict as uiEn } from "@smartcode-ai/ui/i18n/en"
+import { dict as uiZh } from "@smartcode-ai/ui/i18n/zh"
 import { createEffect, createMemo, Suspense, type ParentProps } from "solid-js"
 import { getRequestEvent } from "solid-js/web"
 import "./app.css"
-import { Favicon } from "@smart-ai/ui/favicon"
+import { Favicon } from "@smartcode-ai/ui/favicon"
 
 function resolveTemplate(text: string, params?: UiI18nParams) {
   if (!params) return text

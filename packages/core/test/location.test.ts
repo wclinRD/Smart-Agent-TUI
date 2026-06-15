@@ -1,9 +1,9 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { Location } from "@smart-ai/core/location"
-import { Project } from "@smart-ai/core/project"
-import { AbsolutePath } from "@smart-ai/core/schema"
-import { WorkspaceV2 } from "@smart-ai/core/workspace"
+import { Location } from "@smartcode-ai/core/location"
+import { Project } from "@smartcode-ai/core/project"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
+import { WorkspaceV2 } from "@smartcode-ai/core/workspace"
 import { testEffect } from "./lib/effect"
 
 const workspaceID = WorkspaceV2.ID.make("wrk_test")

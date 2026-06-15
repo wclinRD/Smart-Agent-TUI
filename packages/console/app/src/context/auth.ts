@@ -1,8 +1,8 @@
 import { getRequestEvent } from "solid-js/web"
-import { and, Database, eq, inArray, isNull, sql } from "@smart-ai/console-core/drizzle/index.js"
-import { UserTable } from "@smart-ai/console-core/schema/user.sql.js"
+import { and, Database, eq, inArray, isNull, sql } from "@smartcode-ai/console-core/drizzle/index.js"
+import { UserTable } from "@smartcode-ai/console-core/schema/user.sql.js"
 import { redirect } from "@solidjs/router"
-import { Actor } from "@smart-ai/console-core/actor.js"
+import { Actor } from "@smartcode-ai/console-core/actor.js"
 
 import { createClient } from "@openauthjs/openauth/client"
 
@@ -12,7 +12,7 @@ export const AuthClient = createClient({
 })
 
 import { useSession } from "@solidjs/start/http"
-import { Resource } from "@smart-ai/console-resource"
+import { Resource } from "@smartcode-ai/console-resource"
 
 export interface AuthSession {
   account?: Record<

@@ -1,12 +1,12 @@
-import { TextField } from "@smart-ai/ui/text-field"
+import { TextField } from "@smartcode-ai/ui/text-field"
 import * as Sentry from "@sentry/solid"
-import { Logo } from "@smart-ai/ui/logo"
-import { Button } from "@smart-ai/ui/button"
+import { Logo } from "@smartcode-ai/ui/logo"
+import { Button } from "@smartcode-ai/ui/button"
 import { Component, createSignal, onMount, Show } from "solid-js"
 import { createStore } from "solid-js/store"
 import { usePlatform } from "@/context/platform"
 import { useLanguage } from "@/context/language"
-import { Icon } from "@smart-ai/ui/icon"
+import { Icon } from "@smartcode-ai/ui/icon"
 import { errorDescriptionKey } from "./error-description"
 
 export type InitError = {

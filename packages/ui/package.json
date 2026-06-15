@@ -1,5 +1,5 @@
 {
-  "name": "@smart-ai/ui",
+  "name": "@smartcode-ai/ui",
   "version": "1.17.7",
   "type": "module",
   "license": "MIT",
@@ -49,8 +49,8 @@
   },
   "dependencies": {
     "@kobalte/core": "catalog:",
-    "@smart-ai/core": "workspace:*",
-    "@smart-ai/sdk": "workspace:*",
+    "@smartcode-ai/core": "workspace:*",
+    "@smartcode-ai/sdk": "workspace:*",
     "@pierre/diffs": "catalog:",
     "@shikijs/transformers": "3.9.2",
     "@solid-primitives/bounds": "0.1.3",

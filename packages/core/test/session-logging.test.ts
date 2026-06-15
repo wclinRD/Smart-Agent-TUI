@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test"
 import { Cause, Effect, Logger } from "effect"
-import { logFailure } from "@smart-ai/core/session/logging"
-import { SessionSchema } from "@smart-ai/core/session/schema"
+import { logFailure } from "@smartcode-ai/core/session/logging"
+import { SessionSchema } from "@smartcode-ai/core/session/schema"
 
 describe("Session logging", () => {
   for (const message of ["Failed to drain Session", "Failed to wake Session"] as const) {

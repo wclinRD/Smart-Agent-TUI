@@ -1,4 +1,4 @@
-import { ZenData } from "@smart-ai/console-core/model.js"
+import { ZenData } from "@smartcode-ai/console-core/model.js"
 import {
   fromAnthropicChunk,
   fromAnthropicRequest,

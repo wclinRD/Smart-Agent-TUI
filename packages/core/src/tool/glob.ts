@@ -1,6 +1,6 @@
 export * as GlobTool from "./glob"
 
-import { ToolFailure } from "@smart-ai/llm"
+import { ToolFailure } from "@smartcode-ai/llm"
 import { Effect, Layer, Schema } from "effect"
 import path from "path"
 import { FileSystem } from "../filesystem"

@@ -1,8 +1,8 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { ModelV2 } from "@smart-ai/core/model"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { MistralPlugin } from "@smart-ai/core/plugin/provider/mistral"
+import { ModelV2 } from "@smartcode-ai/core/model"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { MistralPlugin } from "@smartcode-ai/core/plugin/provider/mistral"
 import { fakeSelectorSdk, it, model } from "./provider-helper"
 
 describe("MistralPlugin", () => {

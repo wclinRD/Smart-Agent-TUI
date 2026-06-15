@@ -24,7 +24,7 @@ export function cliErrorMessage(input: unknown): string | undefined {
     return [
       `Model not found: ${field(model, "providerID")}/${field(model, "modelID")}`,
       ...(suggestions.length ? ["Did you mean: " + suggestions.join(", ")] : []),
-      "Try: `smart models` to list available models",
+      "Try: `smartcode models` to list available models",
       "Or check your config (smart.json) provider/model names",
     ].join("\n")
   }

@@ -1,5 +1,5 @@
 import { createStore, produce } from "solid-js/store"
-import { createSimpleContext } from "@smart-ai/ui/context"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
 import { batch, createEffect, createMemo, createRoot, on, onCleanup } from "solid-js"
 import { useParams } from "@solidjs/router"
 import { useSDK, type DirectorySDK } from "./sdk"

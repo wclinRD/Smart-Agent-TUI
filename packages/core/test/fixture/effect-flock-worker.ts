@@ -1,9 +1,9 @@
 import fs from "fs/promises"
 import os from "os"
 import { Effect, Layer } from "effect"
-import { FSUtil } from "@smart-ai/core/fs-util"
-import { EffectFlock } from "@smart-ai/core/util/effect-flock"
-import { Global } from "@smart-ai/core/global"
+import { FSUtil } from "@smartcode-ai/core/fs-util"
+import { EffectFlock } from "@smartcode-ai/core/util/effect-flock"
+import { Global } from "@smartcode-ai/core/global"
 
 type Msg = {
   key: string

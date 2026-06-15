@@ -1,7 +1,7 @@
-import { run } from "@smart-ai/tui"
-import { TuiConfig } from "@smart-ai/tui/config"
+import { run } from "@smartcode-ai/tui"
+import { TuiConfig } from "@smartcode-ai/tui/config"
 import { Effect } from "effect"
-import { Global } from "@smart-ai/core/global"
+import { Global } from "@smartcode-ai/core/global"
 
 export function runTui(transport: { url: string; headers: RequestInit["headers"] }) {
   const config = TuiConfig.resolve({}, { terminalSuspend: false })

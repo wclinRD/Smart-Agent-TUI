@@ -1,7 +1,7 @@
 import { Config, Effect, Formatter, Layer, Schema, Stream } from "effect"
-import { LLM, LLMClient, Message, ProviderID, Tool, ToolRuntime } from "@smart-ai/llm"
-import { Route, Auth, Endpoint, Framing, Protocol, RequestExecutor, WebSocketExecutor } from "@smart-ai/llm/route"
-import { OpenAI } from "@smart-ai/llm/providers"
+import { LLM, LLMClient, Message, ProviderID, Tool, ToolRuntime } from "@smartcode-ai/llm"
+import { Route, Auth, Endpoint, Framing, Protocol, RequestExecutor, WebSocketExecutor } from "@smartcode-ai/llm/route"
+import { OpenAI } from "@smartcode-ai/llm/providers"
 
 /**
  * A runnable walkthrough of the LLM package use-site API.

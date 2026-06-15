@@ -1,7 +1,7 @@
 import { Component, For, Match, Show, Switch } from "solid-js"
-import { FileIcon } from "@smart-ai/ui/file-icon"
-import { Icon } from "@smart-ai/ui/icon"
-import { getDirectory, getFilename } from "@smart-ai/core/util/path"
+import { FileIcon } from "@smartcode-ai/ui/file-icon"
+import { Icon } from "@smartcode-ai/ui/icon"
+import { getDirectory, getFilename } from "@smartcode-ai/core/util/path"
 
 export type AtOption =
   | { type: "agent"; name: string; display: string }

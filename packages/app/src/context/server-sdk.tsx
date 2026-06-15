@@ -1,5 +1,5 @@
-import type { Event } from "@smart-ai/sdk/v2/client"
-import { createSimpleContext } from "@smart-ai/ui/context"
+import type { Event } from "@smartcode-ai/sdk/v2/client"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
 import { createGlobalEmitter } from "@solid-primitives/event-bus"
 import { makeEventListener } from "@solid-primitives/event-listener"
 import { type Accessor, batch, createMemo, onCleanup, onMount } from "solid-js"

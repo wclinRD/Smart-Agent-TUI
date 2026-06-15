@@ -1,6 +1,6 @@
-import { Icon, type IconProps } from "@smart-ai/ui/icon"
-import { Toast, showToast as showLegacyToast, type ToastOptions, type ToastVariant } from "@smart-ai/ui/toast"
-import { ToastV2, showToastV2 } from "@smart-ai/ui/v2/toast-v2"
+import { Icon, type IconProps } from "@smartcode-ai/ui/icon"
+import { Toast, showToast as showLegacyToast, type ToastOptions, type ToastVariant } from "@smartcode-ai/ui/toast"
+import { ToastV2, showToastV2 } from "@smartcode-ai/ui/v2/toast-v2"
 
 let v2 = false
 

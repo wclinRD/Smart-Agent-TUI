@@ -1,4 +1,4 @@
-import { base64Decode } from "@smart-ai/core/util/encode"
+import { base64Decode } from "@smartcode-ai/core/util/encode"
 
 export function decode64(value: string | undefined) {
   if (value === undefined) return

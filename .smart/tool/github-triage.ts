@@ -1,5 +1,5 @@
 /// <reference path="../env.d.ts" />
-import { tool } from "@smart-ai/plugin"
+import { tool } from "@smartcode-ai/plugin"
 
 const TEAM = {
   tui: ["kommander", "simonklee"],

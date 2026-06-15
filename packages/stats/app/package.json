@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@smart-ai/stats-app",
+  "name": "@smartcode-ai/stats-app",
   "version": "1.17.7",
   "private": true,
   "type": "module",
@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@ibm/plex": "6.4.1",
-    "@smart-ai/stats-core": "workspace:*",
-    "@smart-ai/ui": "workspace:*",
+    "@smartcode-ai/stats-core": "workspace:*",
+    "@smartcode-ai/ui": "workspace:*",
     "@solidjs/meta": "catalog:",
     "@solidjs/router": "catalog:",
     "@solidjs/start": "catalog:",

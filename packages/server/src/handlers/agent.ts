@@ -1,5 +1,5 @@
-import { AgentV2 } from "@smart-ai/core/agent"
-import { PluginBoot } from "@smart-ai/core/plugin/boot"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { PluginBoot } from "@smartcode-ai/core/plugin/boot"
 import { Effect } from "effect"
 import { HttpApiBuilder } from "effect/unstable/httpapi"
 import { Api } from "../api"

@@ -84,7 +84,7 @@ export interface Interface {
   readonly grep: (input: GrepInput) => Effect.Effect<readonly Match[], Error | InvalidPatternError>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/Ripgrep") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/Ripgrep") {}
 
 const failure = (message: string, cause?: unknown) => new Error({ message, cause })
 

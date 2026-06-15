@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "@smart-ai/sdk": "workspace:*",
+    "@smartcode-ai/sdk": "workspace:*",
     "effect": "catalog:",
     "zod": "catalog:"
   },

@@ -3,10 +3,10 @@ import path from "path"
 import { describe, expect, test } from "bun:test"
 import { NodeFileSystem } from "@effect/platform-node"
 import { Effect, Layer, Option } from "effect"
-import { FSUtil } from "@smart-ai/core/fs-util"
-import { Global } from "@smart-ai/core/global"
-import { Npm } from "@smart-ai/core/npm"
-import { EffectFlock } from "@smart-ai/core/util/effect-flock"
+import { FSUtil } from "@smartcode-ai/core/fs-util"
+import { Global } from "@smartcode-ai/core/global"
+import { Npm } from "@smartcode-ai/core/npm"
+import { EffectFlock } from "@smartcode-ai/core/util/effect-flock"
 import { tmpdir } from "./fixture/tmpdir"
 
 const win = process.platform === "win32"
@@ -30,8 +30,8 @@ const npmLayer = (cache: string) =>
 
 describe("Npm.sanitize", () => {
   test("keeps normal scoped package specs unchanged", () => {
-    expect(Npm.sanitize("@smart/acme")).toBe("@smart/acme")
-    expect(Npm.sanitize("@smart/acme@1.0.0")).toBe("@smart/acme@1.0.0")
+    expect(Npm.sanitize("@smartcode/acme")).toBe("@smartcode/acme")
+    expect(Npm.sanitize("@smartcode/acme@1.0.0")).toBe("@smartcode/acme@1.0.0")
     expect(Npm.sanitize("prettier")).toBe("prettier")
   })
 

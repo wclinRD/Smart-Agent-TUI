@@ -5,7 +5,7 @@ import {
   desktopMenuVisible,
   type DesktopMenuEntry,
   type DesktopMenuRole,
-} from "@smart-ai/app/desktop-menu"
+} from "@smartcode-ai/app/desktop-menu"
 
 import { UPDATER_ENABLED } from "./constants"
 import { runDesktopMenuAction } from "./desktop-menu-actions"

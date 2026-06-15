@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 
-import { Script } from "@smart-ai/script"
+import { Script } from "@smartcode-ai/script"
 import { $ } from "bun"
 import { fileURLToPath } from "url"
 

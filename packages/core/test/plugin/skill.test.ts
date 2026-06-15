@@ -1,10 +1,10 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { AgentV2 } from "@smart-ai/core/agent"
-import { FSUtil } from "@smart-ai/core/fs-util"
-import { SkillPlugin } from "@smart-ai/core/plugin/skill"
-import { SkillV2 } from "@smart-ai/core/skill"
-import { SkillDiscovery } from "@smart-ai/core/skill/discovery"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { FSUtil } from "@smartcode-ai/core/fs-util"
+import { SkillPlugin } from "@smartcode-ai/core/plugin/skill"
+import { SkillV2 } from "@smartcode-ai/core/skill"
+import { SkillDiscovery } from "@smartcode-ai/core/skill/discovery"
 import { testEffect } from "../lib/effect"
 
 const it = testEffect(

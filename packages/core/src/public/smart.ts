@@ -21,7 +21,7 @@ export interface Interface {
 }
 
 /** Intentional public native API for Effect applications embedding Smart. */
-export class Service extends Context.Service<Service, Interface>()("@smart/public/Smart") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/public/Smart") {}
 
 class SessionModelValidation extends Context.Service<
   SessionModelValidation,
@@ -30,7 +30,7 @@ class SessionModelValidation extends Context.Service<
       input: Session.SwitchModelInput & { readonly location: Session.Info["location"] },
     ) => Effect.Effect<void, Session.ModelUnavailableError | Session.VariantUnavailableError>
   }
->()("@smart/public/Smart/SessionModelValidation") {}
+>()("@smartcode/public/Smart/SessionModelValidation") {}
 
 const ApplicationToolsLayer = ApplicationTools.layer
 const LocationServicesLayer = LocationServiceMap.layer.pipe(Layer.provide(ApplicationToolsLayer))

@@ -1,6 +1,6 @@
 export * as ReadTool from "./read"
 
-import { ToolFailure } from "@smart-ai/llm"
+import { ToolFailure } from "@smartcode-ai/llm"
 import path from "path"
 import { Effect, Layer, Schema } from "effect"
 import { FileSystem } from "../filesystem"

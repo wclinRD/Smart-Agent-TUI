@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test"
 import { Share } from "../../src/core/share"
 import { Storage } from "../../src/core/storage"
-import { Identifier } from "@smart-ai/core/util/identifier"
+import { Identifier } from "@smartcode-ai/core/util/identifier"
 
 describe.concurrent("core.share", () => {
   test("should create a share", async () => {

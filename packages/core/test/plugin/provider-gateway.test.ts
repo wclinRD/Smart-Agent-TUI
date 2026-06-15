@@ -1,7 +1,7 @@
 import { describe, expect, mock } from "bun:test"
 import { Effect } from "effect"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { GatewayPlugin } from "@smart-ai/core/plugin/provider/gateway"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { GatewayPlugin } from "@smartcode-ai/core/plugin/provider/gateway"
 import { it, model } from "./provider-helper"
 
 const gatewayCalls: Record<string, unknown>[] = []

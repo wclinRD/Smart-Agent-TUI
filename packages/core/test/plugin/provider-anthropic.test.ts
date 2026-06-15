@@ -1,9 +1,9 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { Catalog } from "@smart-ai/core/catalog"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { AnthropicPlugin } from "@smart-ai/core/plugin/provider/anthropic"
-import { ProviderV2 } from "@smart-ai/core/provider"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { AnthropicPlugin } from "@smartcode-ai/core/plugin/provider/anthropic"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
 import { it, model, provider } from "./provider-helper"
 
 describe("AnthropicPlugin", () => {

@@ -6,7 +6,7 @@ import {
   parseDeepLink,
   parseNewSessionDeepLink,
 } from "./deep-links"
-import { type Session } from "@smart-ai/sdk/v2/client"
+import { type Session } from "@smartcode-ai/sdk/v2/client"
 import {
   childSessionOnPath,
   closeHomeProject,

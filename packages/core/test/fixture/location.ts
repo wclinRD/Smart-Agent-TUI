@@ -1,6 +1,6 @@
-import { Location } from "@smart-ai/core/location"
-import { Project } from "@smart-ai/core/project"
-import { AbsolutePath } from "@smart-ai/core/schema"
+import { Location } from "@smartcode-ai/core/location"
+import { Project } from "@smartcode-ai/core/project"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
 
 export function location(ref: Location.Ref, input: { projectDirectory?: AbsolutePath; vcs?: Project.Vcs } = {}) {
   return {

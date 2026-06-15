@@ -1,4 +1,4 @@
-import type { McpStatus } from "@smart-ai/sdk/v2/client"
+import type { McpStatus } from "@smartcode-ai/sdk/v2/client"
 
 export async function toggleMcp(input: {
   status: McpStatus["status"]

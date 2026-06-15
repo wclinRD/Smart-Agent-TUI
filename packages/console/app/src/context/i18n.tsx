@@ -1,5 +1,5 @@
 import { createMemo } from "solid-js"
-import { createSimpleContext } from "@smart-ai/ui/context"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
 import { i18n, type Key } from "~/i18n"
 import { useLanguage } from "~/context/language"
 

@@ -1,5 +1,5 @@
-import { getFilename } from "@smart-ai/core/util/path"
-import { type Session } from "@smart-ai/sdk/v2/client"
+import { getFilename } from "@smartcode-ai/core/util/path"
+import { type Session } from "@smartcode-ai/sdk/v2/client"
 import { pathKey } from "@/utils/path-key"
 import type { ServerConnection } from "@/context/server"
 

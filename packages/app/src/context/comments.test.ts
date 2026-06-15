@@ -11,7 +11,7 @@ beforeAll(async () => {
     useLocation: () => ({}),
     useSearchParams: () => [{}, () => undefined],
   }))
-  mock.module("@smart-ai/ui/context", () => ({
+  mock.module("@smartcode-ai/ui/context", () => ({
     createSimpleContext: () => ({
       use: () => undefined,
       provider: () => undefined,

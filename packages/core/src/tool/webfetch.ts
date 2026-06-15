@@ -1,6 +1,6 @@
 export * as WebFetchTool from "./webfetch"
 
-import { ToolFailure } from "@smart-ai/llm"
+import { ToolFailure } from "@smartcode-ai/llm"
 import { Duration, Effect, Layer, Schema, Stream } from "effect"
 import { HttpClient, HttpClientRequest, HttpClientResponse } from "effect/unstable/http"
 import { Parser } from "htmlparser2"

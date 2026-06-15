@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 import { $ } from "bun"
 import pkg from "../package.json"
-import { Script } from "@smart-ai/script"
+import { Script } from "@smartcode-ai/script"
 import { fileURLToPath } from "url"
 
 const dir = fileURLToPath(new URL("..", import.meta.url))
@@ -47,7 +47,7 @@ await Bun.file(`./dist/${pkg.name}/package.json`).write(
 
 await Promise.all(
   Object.entries(binaries).map(([name, version]) =>
-    publish(`./dist/${name.replace("@smart-ai/", "")}`, name, version),
+    publish(`./dist/${name.replace("@smartcode-ai/", "")}`, name, version),
   ),
 )
 await publish(`./dist/${pkg.name}`, pkg.name, version)

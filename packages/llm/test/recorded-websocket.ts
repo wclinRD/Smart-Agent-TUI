@@ -1,4 +1,4 @@
-import { HttpRecorderInternal } from "@smart-ai/http-recorder/internal"
+import { HttpRecorderInternal } from "@smartcode-ai/http-recorder/internal"
 import { Effect, Layer } from "effect"
 import { WebSocketExecutor } from "../src/route"
 import type { Service as WebSocketExecutorService } from "../src/route/transport/websocket"

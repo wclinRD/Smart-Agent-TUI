@@ -129,7 +129,7 @@ export interface Interface {
   readonly entries: () => Effect.Effect<Entry[]>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/v2/Config") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/v2/Config") {}
 
 export const layer = Layer.effect(
   Service,

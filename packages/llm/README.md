@@ -1,11 +1,11 @@
-# @smart-ai/llm
+# @smartcode-ai/llm
 
 Schema-first LLM core for smart. One typed request, response, event, and tool language; provider quirks live in adapters, not in calling code.
 
 ```ts
 import { Effect } from "effect"
-import { LLM, LLMClient } from "@smart-ai/llm"
-import { OpenAI } from "@smart-ai/llm/providers"
+import { LLM, LLMClient } from "@smartcode-ai/llm"
+import { OpenAI } from "@smartcode-ai/llm/providers"
 
 const model = OpenAI.configure({ apiKey: process.env.OPENAI_API_KEY }).responses("gpt-4o-mini")
 
@@ -95,7 +95,7 @@ Normalized cache usage is read back into `response.usage.cacheReadInputTokens` a
 Provider facades configure endpoint/auth/deployment details first, then expose model selectors that take only a model or deployment id. The selected model carries the executable route value used at runtime.
 
 ```ts
-import { OpenAI, CloudflareAIGateway } from "@smart-ai/llm/providers"
+import { OpenAI, CloudflareAIGateway } from "@smartcode-ai/llm/providers"
 
 const openai = OpenAI.configure({ apiKey: process.env.OPENAI_API_KEY }).responses("gpt-4o-mini")
 const gateway = CloudflareAIGateway.configure({

@@ -1,8 +1,8 @@
-# Remove `packages/smart/src/storage/db.ts`
+# Remove `packages/smartcode/src/storage/db.ts`
 
 ## Goal
 
-Remove all production usages of the legacy `packages/smart/src/storage/db.ts` module.
+Remove all production usages of the legacy `packages/smartcode/src/storage/db.ts` module.
 
 This means eliminating imports from `@/storage/db` or `./storage/db`, including:
 
@@ -18,42 +18,42 @@ This does not mean removing SQLite or Drizzle everywhere in one step. The smalle
 
 ## Current Inventory
 
-Production imports from `packages/smart/src/storage/db.ts` are concentrated in 22 source files:
+Production imports from `packages/smartcode/src/storage/db.ts` are concentrated in 22 source files:
 
-- `packages/smart/src/account/repo.ts`
-- `packages/smart/src/cli/cmd/db.ts`
-- `packages/smart/src/cli/cmd/import.ts`
-- `packages/smart/src/cli/cmd/stats.ts`
-- `packages/smart/src/control-plane/workspace.ts`
-- `packages/smart/src/index.ts`
-- `packages/smart/src/node.ts`
-- `packages/smart/src/permission/index.ts`
-- `packages/smart/src/project/project.ts`
-- `packages/smart/src/server/projectors.ts`
-- `packages/smart/src/server/routes/instance/httpapi/handlers/sync.ts`
-- `packages/smart/src/server/shared/fence.ts`
-- `packages/smart/src/session/message-v2.ts`
-- `packages/smart/src/session/projectors.ts`
-- `packages/smart/src/session/prompt.ts`
-- `packages/smart/src/session/session.ts`
-- `packages/smart/src/session/todo.ts`
-- `packages/smart/src/share/share-next.ts`
-- `packages/smart/src/storage/db.ts`
-- `packages/smart/src/sync/index.ts`
-- `packages/smart/src/worktree/index.ts`
+- `packages/smartcode/src/account/repo.ts`
+- `packages/smartcode/src/cli/cmd/db.ts`
+- `packages/smartcode/src/cli/cmd/import.ts`
+- `packages/smartcode/src/cli/cmd/stats.ts`
+- `packages/smartcode/src/control-plane/workspace.ts`
+- `packages/smartcode/src/index.ts`
+- `packages/smartcode/src/node.ts`
+- `packages/smartcode/src/permission/index.ts`
+- `packages/smartcode/src/project/project.ts`
+- `packages/smartcode/src/server/projectors.ts`
+- `packages/smartcode/src/server/routes/instance/httpapi/handlers/sync.ts`
+- `packages/smartcode/src/server/shared/fence.ts`
+- `packages/smartcode/src/session/message-v2.ts`
+- `packages/smartcode/src/session/projectors.ts`
+- `packages/smartcode/src/session/prompt.ts`
+- `packages/smartcode/src/session/session.ts`
+- `packages/smartcode/src/session/todo.ts`
+- `packages/smartcode/src/share/share-next.ts`
+- `packages/smartcode/src/storage/db.ts`
+- `packages/smartcode/src/sync/index.ts`
+- `packages/smartcode/src/worktree/index.ts`
 
 There are 65 direct API/type references in those files. The references fall into the groups below.
 
 ## Group 1: Database Runtime And Startup
 
-Status: Completed. Startup, the public node export, and database CLI tooling no longer import the legacy smart database wrapper; `packages/smart/src/storage/db.ts` has been deleted.
+Status: Completed. Startup, the public node export, and database CLI tooling no longer import the legacy smart database wrapper; `packages/smartcode/src/storage/db.ts` has been deleted.
 
 Files:
 
-- `packages/smart/src/storage/db.ts`
-- `packages/smart/src/index.ts`
-- `packages/smart/src/node.ts`
-- `packages/smart/src/cli/cmd/db.ts`
+- `packages/smartcode/src/storage/db.ts`
+- `packages/smartcode/src/index.ts`
+- `packages/smartcode/src/node.ts`
+- `packages/smartcode/src/cli/cmd/db.ts`
 
 Current usage:
 
@@ -80,9 +80,9 @@ Status: Completed. `SyncEvent` and the smart projector boundary were removed; se
 
 Files:
 
-- `packages/smart/src/sync/index.ts`
-- `packages/smart/src/session/projectors.ts`
-- `packages/smart/src/server/projectors.ts`
+- `packages/smartcode/src/sync/index.ts`
+- `packages/smartcode/src/session/projectors.ts`
+- `packages/smartcode/src/server/projectors.ts`
 
 Current usage:
 
@@ -113,10 +113,10 @@ Status: Completed. These services no longer import the legacy smart database wra
 
 Files:
 
-- `packages/smart/src/account/repo.ts`
-- `packages/smart/src/project/project.ts`
-- `packages/smart/src/control-plane/workspace.ts`
-- `packages/smart/src/share/share-next.ts`
+- `packages/smartcode/src/account/repo.ts`
+- `packages/smartcode/src/project/project.ts`
+- `packages/smartcode/src/control-plane/workspace.ts`
+- `packages/smartcode/src/share/share-next.ts`
 
 Current usage:
 
@@ -148,11 +148,11 @@ Status: Completed. Session/message reads and projector writes have moved off the
 
 Files:
 
-- `packages/smart/src/session/session.ts`
-- `packages/smart/src/session/message-v2.ts`
-- `packages/smart/src/session/prompt.ts`
-- `packages/smart/src/session/todo.ts`
-- `packages/smart/src/session/projectors.ts`
+- `packages/smartcode/src/session/session.ts`
+- `packages/smartcode/src/session/message-v2.ts`
+- `packages/smartcode/src/session/prompt.ts`
+- `packages/smartcode/src/session/todo.ts`
+- `packages/smartcode/src/session/projectors.ts`
 
 Current usage:
 
@@ -187,12 +187,12 @@ Status: Completed. Remaining one-off CLI/admin reads and writes now use core dat
 
 Files:
 
-- `packages/smart/src/cli/cmd/import.ts`
-- `packages/smart/src/cli/cmd/stats.ts`
-- `packages/smart/src/server/shared/fence.ts`
-- `packages/smart/src/server/routes/instance/httpapi/handlers/sync.ts`
-- `packages/smart/src/worktree/index.ts`
-- `packages/smart/src/permission/index.ts`
+- `packages/smartcode/src/cli/cmd/import.ts`
+- `packages/smartcode/src/cli/cmd/stats.ts`
+- `packages/smartcode/src/server/shared/fence.ts`
+- `packages/smartcode/src/server/routes/instance/httpapi/handlers/sync.ts`
+- `packages/smartcode/src/worktree/index.ts`
+- `packages/smartcode/src/permission/index.ts`
 
 Current usage:
 
@@ -217,7 +217,7 @@ Target shape:
 
 ## Recommended Migration Sequence
 
-All migration groups are complete or superseded. `packages/smart/src/storage/db.ts` has been deleted.
+All migration groups are complete or superseded. `packages/smartcode/src/storage/db.ts` has been deleted.
 
 ## Superseded: Data Migrations
 
@@ -230,10 +230,10 @@ The previous smart `data-migration.ts` service only backfilled session usage fro
 - Nested reads inside a transaction must use the active transaction, not the root client.
 - `SyncEvent.run` sequence allocation must keep immediate transaction behavior.
 - Post-commit publish effects must not run before the transaction commits.
-- Existing schema ownership remains in `packages/core/src/**/*.sql.ts`; do not move table definitions back into `packages/smart`.
+- Existing schema ownership remains in `packages/core/src/**/*.sql.ts`; do not move table definitions back into `packages/smartcode`.
 
 ## Verification Commands
 
-- `rg "@/storage/db|./storage/db|Database\.(use|transaction|effect|Client|getPath)|\bTxOrDb\b|\bTransaction\b" packages/smart/src`
-- `bun typecheck` from `packages/smart`
-- Relevant package tests from `packages/smart`, not the repo root
+- `rg "@/storage/db|./storage/db|Database\.(use|transaction|effect|Client|getPath)|\bTxOrDb\b|\bTransaction\b" packages/smartcode/src`
+- `bun typecheck` from `packages/smartcode`
+- Relevant package tests from `packages/smartcode`, not the repo root

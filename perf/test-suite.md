@@ -2,11 +2,11 @@
 
 ## Goal
 
-Speed up the `packages/smart` test suite without reducing coverage or hiding failures.
+Speed up the `packages/smartcode` test suite without reducing coverage or hiding failures.
 
 ## Benchmark Command
 
-Run from `packages/smart`:
+Run from `packages/smartcode`:
 
 ```sh
 bun run bench:test
@@ -43,7 +43,7 @@ For profiling: `slowest_test_file_seconds` and the slowest file list.
 
 ## Files In Scope
 
-`packages/smart/test/**`, test fixtures, package test scripts, and implementation setup paths only when a benchmarked bottleneck points there.
+`packages/smartcode/test/**`, test fixtures, package test scripts, and implementation setup paths only when a benchmarked bottleneck points there.
 
 ## Signals To Watch
 

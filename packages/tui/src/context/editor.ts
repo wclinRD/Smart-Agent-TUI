@@ -225,7 +225,7 @@ export const { use: useEditorContext, provider: EditorContextProvider } = create
         request("initialize", {
           protocolVersion: MCP_PROTOCOL_VERSION,
           capabilities: {},
-          clientInfo: { name: "smart", version: "0.0.0" },
+          clientInfo: { name: "smartcode", version: "0.0.0" },
         })
       })
 

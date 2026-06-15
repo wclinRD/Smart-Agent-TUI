@@ -1,5 +1,5 @@
-import { SessionMessage } from "@smart-ai/core/session/message"
-import { SessionV2 } from "@smart-ai/core/session"
+import { SessionMessage } from "@smartcode-ai/core/session/message"
+import { SessionV2 } from "@smartcode-ai/core/session"
 import { Effect, Schema } from "effect"
 import { HttpApiBuilder } from "effect/unstable/httpapi"
 import { Api } from "../api"

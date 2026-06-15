@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test"
-import { base64Encode } from "@smart-ai/core/util/encode"
+import { base64Encode } from "@smartcode-ai/core/util/encode"
 import { fixture, pageMessages } from "./session-timeline.fixture"
 import { trackPageErrors, expectNoSmokeErrors } from "../utils/errors"
 import { mockSmartServer } from "../utils/mock-server"

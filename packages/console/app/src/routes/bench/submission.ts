@@ -1,7 +1,7 @@
 import type { APIEvent } from "@solidjs/start/server"
-import { Database } from "@smart-ai/console-core/drizzle/index.js"
-import { BenchmarkTable } from "@smart-ai/console-core/schema/benchmark.sql.js"
-import { Identifier } from "@smart-ai/console-core/identifier.js"
+import { Database } from "@smartcode-ai/console-core/drizzle/index.js"
+import { BenchmarkTable } from "@smartcode-ai/console-core/schema/benchmark.sql.js"
+import { Identifier } from "@smartcode-ai/console-core/identifier.js"
 import { i18n } from "~/i18n"
 import { localeFromRequest } from "~/lib/language"
 

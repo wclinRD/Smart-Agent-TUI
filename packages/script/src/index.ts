@@ -74,4 +74,4 @@ export const Script = {
     return team
   },
 }
-console.log(`smart script`, JSON.stringify(Script, null, 2))
+console.log(`smartcode script`, JSON.stringify(Script, null, 2))

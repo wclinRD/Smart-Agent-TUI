@@ -1,4 +1,4 @@
-import { createOpencodeClient, createOpencodeServer } from "@smart-ai/sdk"
+import { createOpencodeClient, createOpencodeServer } from "@smartcode-ai/sdk"
 import { pathToFileURL } from "bun"
 
 const server = await createOpencodeServer()

@@ -2,7 +2,7 @@
 
 import path from "path"
 import { pathToFileURL } from "bun"
-import { createOpencode } from "@smart-ai/sdk"
+import { createOpencode } from "@smartcode-ai/sdk"
 import { parseArgs } from "util"
 
 async function main() {

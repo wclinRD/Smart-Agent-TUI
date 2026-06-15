@@ -1,5 +1,5 @@
-import { EventV2 } from "@smart-ai/core/event"
-import { Location } from "@smart-ai/core/location"
+import { EventV2 } from "@smartcode-ai/core/event"
+import { Location } from "@smartcode-ai/core/location"
 import { Effect, Stream } from "effect"
 import { HttpServerResponse } from "effect/unstable/http"
 import { HttpApiBuilder } from "effect/unstable/httpapi"

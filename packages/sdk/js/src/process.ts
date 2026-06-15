@@ -1,7 +1,7 @@
 import { type ChildProcess, spawnSync } from "node:child_process"
 
-// Duplicated from `packages/smart/src/util/process.ts` because the SDK cannot
-// import `smart` without creating a cycle (`smart` depends on `@smart-ai/sdk`).
+// Duplicated from `packages/smartcode/src/util/process.ts` because the SDK cannot
+// import `smart` without creating a cycle (`smart` depends on `@smartcode-ai/sdk`).
 export function stop(proc: ChildProcess) {
   if (proc.exitCode !== null || proc.signalCode !== null) return
   if (process.platform === "win32" && proc.pid) {

@@ -1,5 +1,5 @@
-import { ProviderV2 } from "@smart-ai/core/provider"
-import { Location } from "@smart-ai/core/location"
+import { ProviderV2 } from "@smartcode-ai/core/provider"
+import { Location } from "@smartcode-ai/core/location"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { ProviderNotFoundError, ServiceUnavailableError } from "../errors"

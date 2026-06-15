@@ -1,5 +1,5 @@
-import { Database, eq } from "@smart-ai/console-core/drizzle/index.js"
-import { ModelStickyProviderTable } from "@smart-ai/console-core/schema/ip.sql.js"
+import { Database, eq } from "@smartcode-ai/console-core/drizzle/index.js"
+import { ModelStickyProviderTable } from "@smartcode-ai/console-core/schema/ip.sql.js"
 
 export function createStickyTracker(
   modelId: string,

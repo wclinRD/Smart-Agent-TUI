@@ -1,4 +1,4 @@
-import type { HttpRecorder } from "@smart-ai/http-recorder"
+import type { HttpRecorder } from "@smartcode-ai/http-recorder"
 import { describe } from "bun:test"
 import { Effect } from "effect"
 import type { Model } from "../src"

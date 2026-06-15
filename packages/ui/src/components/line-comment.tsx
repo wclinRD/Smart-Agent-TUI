@@ -1,5 +1,5 @@
-import { useFilteredList } from "@smart-ai/ui/hooks"
-import { getDirectory, getFilename } from "@smart-ai/core/util/path"
+import { useFilteredList } from "@smartcode-ai/ui/hooks"
+import { getDirectory, getFilename } from "@smartcode-ai/core/util/path"
 import { createSignal, For, onMount, Show, splitProps, type JSX } from "solid-js"
 import { Button } from "./button"
 import { FileIcon } from "./file-icon"

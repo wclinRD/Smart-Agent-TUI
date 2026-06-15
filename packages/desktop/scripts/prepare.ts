@@ -1,5 +1,5 @@
 #!/usr/bin/env bun
-import { Script } from "@smart-ai/script"
+import { Script } from "@smartcode-ai/script"
 
 await import("./prebuild")
 

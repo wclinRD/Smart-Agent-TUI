@@ -122,7 +122,7 @@ export interface Interface {
   readonly refresh: (force?: boolean) => Effect.Effect<void>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/ModelsDev") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/ModelsDev") {}
 
 export const layer = Layer.effect(
   Service,

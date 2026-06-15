@@ -1,4 +1,4 @@
-import type { UserMessage } from "@smart-ai/sdk/v2"
+import type { UserMessage } from "@smartcode-ai/sdk/v2"
 
 type Local = {
   session: {

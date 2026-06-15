@@ -41,7 +41,7 @@ https://github.com/anomalyco/models.dev
 
 ### Running against a different directory
 
-By default, `bun dev` runs Smart in the `packages/smart` directory. To run it against a different directory or repository:
+By default, `bun dev` runs Smart in the `packages/smartcode` directory. To run it against a different directory or repository:
 
 ```bash
 bun dev <directory>
@@ -58,23 +58,23 @@ bun dev .
 To compile a standalone executable:
 
 ```bash
-./packages/smart/script/build.ts --single
+./packages/smartcode/script/build.ts --single
 ```
 
 Then run it with:
 
 ```bash
-./packages/smart/dist/smart-<platform>/bin/smart
+./packages/smartcode/dist/smart-<platform>/bin/smart
 ```
 
 Replace `<platform>` with your platform (e.g., `darwin-arm64`, `linux-x64`).
 
 - Core pieces:
-  - `packages/smart`: Smart core business logic & server.
-  - `packages/smart/src/cli/cmd/tui/`: The TUI code, written in SolidJS with [opentui](https://github.com/sst/opentui)
+  - `packages/smartcode`: Smart core business logic & server.
+  - `packages/smartcode/src/cli/cmd/tui/`: The TUI code, written in SolidJS with [opentui](https://github.com/sst/opentui)
   - `packages/app`: The shared web UI components, written in SolidJS
   - `packages/desktop`: The native desktop app, built with Electron (wraps `packages/app`)
-  - `packages/plugin`: Source for `@smart-ai/plugin`
+  - `packages/plugin`: Source for `@smartcode-ai/plugin`
 
 ### Understanding bun dev vs smart
 
@@ -139,7 +139,7 @@ bun run --cwd packages/desktop package
 ```
 
 > [!NOTE]
-> If you make changes to the API or SDK (e.g. `packages/smart/src/server/server.ts`), run `./script/generate.ts` to regenerate the SDK and related files.
+> If you make changes to the API or SDK (e.g. `packages/smartcode/src/server/server.ts`), run `./script/generate.ts` to regenerate the SDK and related files.
 
 Please try to follow the [style guide](./AGENTS.md)
 
@@ -155,9 +155,9 @@ Caveats:
 - If you want to run the Smart TUI and have breakpoints triggered in the server code, you might need to run `bun dev spawn` instead of
   the usual `bun dev`. This is because `bun dev` runs the server in a worker thread and breakpoints might not work there.
 - If `spawn` does not work for you, you can debug the server separately:
-  - Debug server: `bun run --inspect=ws://localhost:6499/ --cwd packages/smart ./src/index.ts serve --port 4096`,
-    then attach TUI with `smart attach http://localhost:4096`
-  - Debug TUI: `bun run --inspect=ws://localhost:6499/ --cwd packages/smart --conditions=browser ./src/index.ts`
+  - Debug server: `bun run --inspect=ws://localhost:6499/ --cwd packages/smartcode ./src/index.ts serve --port 4096`,
+    then attach TUI with `smartcode attach http://localhost:4096`
+  - Debug TUI: `bun run --inspect=ws://localhost:6499/ --cwd packages/smartcode --conditions=browser ./src/index.ts`
 
 Other tips and tricks:
 

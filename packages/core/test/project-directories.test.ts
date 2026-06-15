@@ -1,11 +1,11 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer, Schema } from "effect"
-import { Database } from "@smart-ai/core/database/database"
-import { EventV2 } from "@smart-ai/core/event"
-import { Project } from "@smart-ai/core/project"
-import { ProjectDirectories } from "@smart-ai/core/project/directories"
-import { ProjectTable } from "@smart-ai/core/project/sql"
-import { AbsolutePath } from "@smart-ai/core/schema"
+import { Database } from "@smartcode-ai/core/database/database"
+import { EventV2 } from "@smartcode-ai/core/event"
+import { Project } from "@smartcode-ai/core/project"
+import { ProjectDirectories } from "@smartcode-ai/core/project/directories"
+import { ProjectTable } from "@smartcode-ai/core/project/sql"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
 import { testEffect } from "./lib/effect"
 
 const database = Database.layerFromPath(":memory:")

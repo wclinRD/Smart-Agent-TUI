@@ -1,5 +1,5 @@
-import { ProjectCopy } from "@smart-ai/core/project/copy"
-import { ProjectV2 } from "@smart-ai/core/project"
+import { ProjectCopy } from "@smartcode-ai/core/project/copy"
+import { ProjectV2 } from "@smartcode-ai/core/project"
 import { Schema, Struct } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, HttpApiSchema, OpenApi } from "effect/unstable/httpapi"
 import { LocationMiddleware, LocationQuery, locationQueryOpenApi } from "./location"

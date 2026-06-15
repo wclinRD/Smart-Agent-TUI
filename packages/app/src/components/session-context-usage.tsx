@@ -1,7 +1,7 @@
 import { Match, Show, Switch, createMemo } from "solid-js"
-import { Tooltip, type TooltipProps } from "@smart-ai/ui/tooltip"
-import { ProgressCircle } from "@smart-ai/ui/progress-circle"
-import { Button } from "@smart-ai/ui/button"
+import { Tooltip, type TooltipProps } from "@smartcode-ai/ui/tooltip"
+import { ProgressCircle } from "@smartcode-ai/ui/progress-circle"
+import { Button } from "@smartcode-ai/ui/button"
 
 import { useFile } from "@/context/file"
 import { useLayout } from "@/context/layout"

@@ -1,8 +1,8 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { PtyID } from "@smart-ai/core/pty/schema"
-import { PtyTicket } from "@smart-ai/core/pty/ticket"
-import { WorkspaceV2 } from "@smart-ai/core/workspace"
+import { PtyID } from "@smartcode-ai/core/pty/schema"
+import { PtyTicket } from "@smartcode-ai/core/pty/ticket"
+import { WorkspaceV2 } from "@smartcode-ai/core/workspace"
 import { testEffect } from "../lib/effect"
 
 const it = testEffect(PtyTicket.layer)

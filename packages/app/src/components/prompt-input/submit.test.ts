@@ -81,19 +81,19 @@ beforeAll(async () => {
     useSearchParams: () => [{}, () => undefined],
   }))
 
-  mock.module("@smart-ai/sdk/v2/client", () => ({
+  mock.module("@smartcode-ai/sdk/v2/client", () => ({
     createOpencodeClient: (input: { directory: string }) => {
       createdClients.push(input.directory)
       return clientFor(input.directory)
     },
   }))
 
-  mock.module("@smart-ai/ui/toast", () => ({
+  mock.module("@smartcode-ai/ui/toast", () => ({
     Toast: { Region: () => null },
     showToast: () => 0,
   }))
 
-  mock.module("@smart-ai/core/util/encode", () => ({
+  mock.module("@smartcode-ai/core/util/encode", () => ({
     base64Encode: (value: string) => value,
   }))
 

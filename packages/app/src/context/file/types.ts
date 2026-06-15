@@ -1,4 +1,4 @@
-import type { FileContent } from "@smart-ai/sdk/v2"
+import type { FileContent } from "@smartcode-ai/sdk/v2"
 
 export type FileSelection = {
   startLine: number

@@ -1,5 +1,5 @@
-import { createSimpleContext } from "@smart-ai/ui/context"
-import { base64Encode } from "@smart-ai/core/util/encode"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
+import { base64Encode } from "@smartcode-ai/core/util/encode"
 import { useParams } from "@solidjs/router"
 import { batch, createEffect, createMemo } from "solid-js"
 import { createStore } from "solid-js/store"

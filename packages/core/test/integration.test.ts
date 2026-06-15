@@ -1,9 +1,9 @@
 import { describe, expect } from "bun:test"
 import { Duration, Effect, Exit, Fiber, Layer, Scope, Stream } from "effect"
 import * as TestClock from "effect/testing/TestClock"
-import { Integration } from "@smart-ai/core/integration"
-import { Credential } from "@smart-ai/core/credential"
-import { EventV2 } from "@smart-ai/core/event"
+import { Integration } from "@smartcode-ai/core/integration"
+import { Credential } from "@smartcode-ai/core/credential"
+import { EventV2 } from "@smartcode-ai/core/event"
 import { it } from "./lib/effect"
 
 const layer = Integration.locationLayer.pipe(

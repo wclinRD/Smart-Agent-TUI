@@ -1,4 +1,4 @@
-import type { Message, Part } from "@smart-ai/sdk/v2/client"
+import type { Message, Part } from "@smartcode-ai/sdk/v2/client"
 
 export type SessionContextBreakdownKey = "system" | "user" | "assistant" | "tool" | "other"
 

@@ -1,6 +1,6 @@
 import { NodeFileSystem } from "@effect/platform-node"
-import { HttpRecorder } from "@smart-ai/http-recorder"
-import { HttpRecorderInternal } from "@smart-ai/http-recorder/internal"
+import { HttpRecorder } from "@smartcode-ai/http-recorder"
+import { HttpRecorderInternal } from "@smartcode-ai/http-recorder/internal"
 import { Layer } from "effect"
 import { FetchHttpClient } from "effect/unstable/http"
 import * as path from "node:path"

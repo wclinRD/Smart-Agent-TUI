@@ -1,5 +1,5 @@
-import { AgentV2 } from "@smart-ai/core/agent"
-import { Location } from "@smart-ai/core/location"
+import { AgentV2 } from "@smartcode-ai/core/agent"
+import { Location } from "@smartcode-ai/core/location"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { LocationQuery, locationQueryOpenApi, LocationMiddleware } from "./location"

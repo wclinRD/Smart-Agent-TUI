@@ -1,8 +1,8 @@
 import { For, Show, createEffect, createMemo } from "solid-js"
 import { createStore } from "solid-js/store"
-import { Button } from "@smart-ai/ui/button"
-import { DockTray } from "@smart-ai/ui/dock-surface"
-import { IconButton } from "@smart-ai/ui/icon-button"
+import { Button } from "@smartcode-ai/ui/button"
+import { DockTray } from "@smartcode-ai/ui/dock-surface"
+import { IconButton } from "@smartcode-ai/ui/icon-button"
 import { useLanguage } from "@/context/language"
 
 export function SessionRevertDock(props: {

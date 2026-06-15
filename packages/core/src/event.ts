@@ -172,7 +172,7 @@ export interface Interface {
   readonly claim: (aggregateID: string, ownerID: string) => Effect.Effect<void>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/Event") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/Event") {}
 
 export interface LayerOptions {
   readonly beforeAggregateRead?: (aggregateID: string) => Effect.Effect<void>

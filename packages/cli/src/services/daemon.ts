@@ -1,7 +1,7 @@
-import { Global } from "@smart-ai/core/global"
-import { InstallationVersion } from "@smart-ai/core/installation/version"
-import { createOpencodeClient } from "@smart-ai/sdk/v2/client"
-import { ServerAuth } from "@smart-ai/server/auth"
+import { Global } from "@smartcode-ai/core/global"
+import { InstallationVersion } from "@smartcode-ai/core/installation/version"
+import { createOpencodeClient } from "@smartcode-ai/sdk/v2/client"
+import { ServerAuth } from "@smartcode-ai/server/auth"
 import { Context, Effect, FileSystem, Layer, Option, Schedule, Schema, Scope } from "effect"
 import { HttpServer } from "effect/unstable/http"
 import { randomBytes, randomUUID } from "crypto"
@@ -18,7 +18,7 @@ export interface Interface {
   readonly register: (address: HttpServer.Address) => Effect.Effect<void, unknown, Scope.Scope>
 }
 
-export class Service extends Context.Service<Service, Interface>()("@smart/cli/Daemon") {}
+export class Service extends Context.Service<Service, Interface>()("@smartcode/cli/Daemon") {}
 
 const Registration = Schema.Struct({
   id: Schema.optional(Schema.String),

@@ -1,7 +1,7 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { VenicePlugin } from "@smart-ai/core/plugin/provider/venice"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { VenicePlugin } from "@smartcode-ai/core/plugin/provider/venice"
 import { fakeSelectorSdk, it, model } from "./provider-helper"
 
 describe("VenicePlugin", () => {

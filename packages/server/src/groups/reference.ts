@@ -1,5 +1,5 @@
-import { Location } from "@smart-ai/core/location"
-import { Reference } from "@smart-ai/core/reference"
+import { Location } from "@smartcode-ai/core/location"
+import { Reference } from "@smartcode-ai/core/reference"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { LocationMiddleware, LocationQuery, locationQueryOpenApi } from "./location"

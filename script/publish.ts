@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 
-import { Script } from "@smart-ai/script"
+import { Script } from "@smartcode-ai/script"
 import { $ } from "bun"
 import { fileURLToPath } from "url"
 
@@ -36,7 +36,7 @@ if (Script.release && !Script.preview) {
 await prepareReleaseFiles()
 
 console.log("\n=== cli ===\n")
-await $`bun ./packages/smart/script/publish.ts`
+await $`bun ./packages/smartcode/script/publish.ts`
 
 console.log("\n=== preview cli ===\n")
 await $`bun ./packages/cli/script/publish.ts`

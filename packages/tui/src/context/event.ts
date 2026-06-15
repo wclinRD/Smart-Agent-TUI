@@ -1,4 +1,4 @@
-import type { Event } from "@smart-ai/sdk/v2"
+import type { Event } from "@smartcode-ai/sdk/v2"
 import { useSDK } from "./sdk"
 
 type EventMetadata = {

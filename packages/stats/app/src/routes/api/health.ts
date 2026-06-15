@@ -1,5 +1,5 @@
-import { AppConfig } from "@smart-ai/stats-core/config"
-import { runtime } from "@smart-ai/stats-core/runtime"
+import { AppConfig } from "@smartcode-ai/stats-core/config"
+import { runtime } from "@smartcode-ai/stats-core/runtime"
 import { Effect } from "effect"
 
 export async function GET() {

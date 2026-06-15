@@ -1,10 +1,10 @@
 import * as i18n from "@solid-primitives/i18n"
 import { createEffect, createMemo, createResource } from "solid-js"
 import { createStore } from "solid-js/store"
-import { createSimpleContext } from "@smart-ai/ui/context"
+import { createSimpleContext } from "@smartcode-ai/ui/context"
 import { Persist, persisted } from "@/utils/persist"
 import { dict as en } from "@/i18n/en"
-import { dict as uiEn } from "@smart-ai/ui/i18n/en"
+import { dict as uiEn } from "@smartcode-ai/ui/i18n/en"
 
 export type Locale =
   | "en"
@@ -104,23 +104,23 @@ const merge = (app: Promise<Source>, ui: Promise<Source>) =>
   Promise.all([app, ui]).then(([a, b]) => ({ ...base, ...i18n.flatten({ ...a.dict, ...b.dict }) }) as Dictionary)
 
 const loaders: Record<Exclude<Locale, "en">, () => Promise<Dictionary>> = {
-  zh: () => merge(import("@/i18n/zh"), import("@smart-ai/ui/i18n/zh")),
-  zht: () => merge(import("@/i18n/zht"), import("@smart-ai/ui/i18n/zht")),
-  ko: () => merge(import("@/i18n/ko"), import("@smart-ai/ui/i18n/ko")),
-  de: () => merge(import("@/i18n/de"), import("@smart-ai/ui/i18n/de")),
-  es: () => merge(import("@/i18n/es"), import("@smart-ai/ui/i18n/es")),
-  fr: () => merge(import("@/i18n/fr"), import("@smart-ai/ui/i18n/fr")),
-  da: () => merge(import("@/i18n/da"), import("@smart-ai/ui/i18n/da")),
-  ja: () => merge(import("@/i18n/ja"), import("@smart-ai/ui/i18n/ja")),
-  pl: () => merge(import("@/i18n/pl"), import("@smart-ai/ui/i18n/pl")),
-  ru: () => merge(import("@/i18n/ru"), import("@smart-ai/ui/i18n/ru")),
-  uk: () => merge(import("@/i18n/uk"), import("@smart-ai/ui/i18n/uk")),
-  ar: () => merge(import("@/i18n/ar"), import("@smart-ai/ui/i18n/ar")),
-  no: () => merge(import("@/i18n/no"), import("@smart-ai/ui/i18n/no")),
-  br: () => merge(import("@/i18n/br"), import("@smart-ai/ui/i18n/br")),
-  th: () => merge(import("@/i18n/th"), import("@smart-ai/ui/i18n/th")),
-  bs: () => merge(import("@/i18n/bs"), import("@smart-ai/ui/i18n/bs")),
-  tr: () => merge(import("@/i18n/tr"), import("@smart-ai/ui/i18n/tr")),
+  zh: () => merge(import("@/i18n/zh"), import("@smartcode-ai/ui/i18n/zh")),
+  zht: () => merge(import("@/i18n/zht"), import("@smartcode-ai/ui/i18n/zht")),
+  ko: () => merge(import("@/i18n/ko"), import("@smartcode-ai/ui/i18n/ko")),
+  de: () => merge(import("@/i18n/de"), import("@smartcode-ai/ui/i18n/de")),
+  es: () => merge(import("@/i18n/es"), import("@smartcode-ai/ui/i18n/es")),
+  fr: () => merge(import("@/i18n/fr"), import("@smartcode-ai/ui/i18n/fr")),
+  da: () => merge(import("@/i18n/da"), import("@smartcode-ai/ui/i18n/da")),
+  ja: () => merge(import("@/i18n/ja"), import("@smartcode-ai/ui/i18n/ja")),
+  pl: () => merge(import("@/i18n/pl"), import("@smartcode-ai/ui/i18n/pl")),
+  ru: () => merge(import("@/i18n/ru"), import("@smartcode-ai/ui/i18n/ru")),
+  uk: () => merge(import("@/i18n/uk"), import("@smartcode-ai/ui/i18n/uk")),
+  ar: () => merge(import("@/i18n/ar"), import("@smartcode-ai/ui/i18n/ar")),
+  no: () => merge(import("@/i18n/no"), import("@smartcode-ai/ui/i18n/no")),
+  br: () => merge(import("@/i18n/br"), import("@smartcode-ai/ui/i18n/br")),
+  th: () => merge(import("@/i18n/th"), import("@smartcode-ai/ui/i18n/th")),
+  bs: () => merge(import("@/i18n/bs"), import("@smartcode-ai/ui/i18n/bs")),
+  tr: () => merge(import("@/i18n/tr"), import("@smartcode-ai/ui/i18n/tr")),
 }
 
 function loadDict(locale: Locale) {

@@ -1,5 +1,5 @@
 {
-  "name": "@smart-ai/desktop",
+  "name": "@smartcode-ai/desktop",
   "private": true,
   "version": "1.17.7",
   "type": "module",
@@ -36,8 +36,8 @@
   "devDependencies": {
     "@actions/artifact": "4.0.0",
     "@lydell/node-pty": "catalog:",
-    "@smart-ai/app": "workspace:*",
-    "@smart-ai/ui": "workspace:*",
+    "@smartcode-ai/app": "workspace:*",
+    "@smartcode-ai/ui": "workspace:*",
     "@sentry/solid": "catalog:",
     "@sentry/vite-plugin": "catalog:",
     "@solid-primitives/i18n": "2.2.1",

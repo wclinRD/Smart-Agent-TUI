@@ -1,5 +1,5 @@
-import { SessionV2 } from "@smart-ai/core/session"
-import { SessionMessage } from "@smart-ai/core/session/message"
+import { SessionV2 } from "@smartcode-ai/core/session"
+import { SessionMessage } from "@smartcode-ai/core/session/message"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { InvalidCursorError, SessionNotFoundError, UnknownError } from "../errors"

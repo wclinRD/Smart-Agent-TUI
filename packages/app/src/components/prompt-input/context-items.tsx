@@ -1,8 +1,8 @@
 import { Component, For, Show } from "solid-js"
-import { FileIcon } from "@smart-ai/ui/file-icon"
-import { IconButton } from "@smart-ai/ui/icon-button"
-import { Tooltip } from "@smart-ai/ui/tooltip"
-import { getDirectory, getFilename, getFilenameTruncated } from "@smart-ai/core/util/path"
+import { FileIcon } from "@smartcode-ai/ui/file-icon"
+import { IconButton } from "@smartcode-ai/ui/icon-button"
+import { Tooltip } from "@smartcode-ai/ui/tooltip"
+import { getDirectory, getFilename, getFilenameTruncated } from "@smartcode-ai/core/util/path"
 import type { ContextItem } from "@/context/prompt"
 
 type PromptContextItem = ContextItem & { key: string }

@@ -1,5 +1,5 @@
-import { Catalog } from "@smart-ai/core/catalog"
-import { PluginBoot } from "@smart-ai/core/plugin/boot"
+import { Catalog } from "@smartcode-ai/core/catalog"
+import { PluginBoot } from "@smartcode-ai/core/plugin/boot"
 import { Effect } from "effect"
 import { HttpApiBuilder } from "effect/unstable/httpapi"
 import { Api } from "../api"

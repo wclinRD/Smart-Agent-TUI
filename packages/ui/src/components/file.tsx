@@ -1,4 +1,4 @@
-import { sampledChecksum } from "@smart-ai/core/util/encode"
+import { sampledChecksum } from "@smartcode-ai/core/util/encode"
 import {
   areFilesEqual,
   areOptionsEqual,

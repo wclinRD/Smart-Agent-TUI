@@ -1,8 +1,8 @@
 "use server"
 
-import { Database, and, eq, isNull, sql } from "@smart-ai/console-core/drizzle/index.js"
-import { AuthTable } from "@smart-ai/console-core/schema/auth.sql.js"
-import { UserTable } from "@smart-ai/console-core/schema/user.sql.js"
+import { Database, and, eq, isNull, sql } from "@smartcode-ai/console-core/drizzle/index.js"
+import { AuthTable } from "@smartcode-ai/console-core/schema/auth.sql.js"
+import { UserTable } from "@smartcode-ai/console-core/schema/user.sql.js"
 import {
   BillingTable,
   PaymentTable,
@@ -10,15 +10,15 @@ import {
   BlackPlans,
   UsageTable,
   LiteTable,
-} from "@smart-ai/console-core/schema/billing.sql.js"
-import { WorkspaceTable } from "@smart-ai/console-core/schema/workspace.sql.js"
-import { KeyTable } from "@smart-ai/console-core/schema/key.sql.js"
-import { ModelTable } from "@smart-ai/console-core/schema/model.sql.js"
-import { BlackData } from "@smart-ai/console-core/black.js"
-import { LiteData } from "@smart-ai/console-core/lite.js"
-import { Subscription } from "@smart-ai/console-core/subscription.js"
-import { centsToMicroCents } from "@smart-ai/console-core/util/price.js"
-import { getWeekBounds } from "@smart-ai/console-core/util/date.js"
+} from "@smartcode-ai/console-core/schema/billing.sql.js"
+import { WorkspaceTable } from "@smartcode-ai/console-core/schema/workspace.sql.js"
+import { KeyTable } from "@smartcode-ai/console-core/schema/key.sql.js"
+import { ModelTable } from "@smartcode-ai/console-core/schema/model.sql.js"
+import { BlackData } from "@smartcode-ai/console-core/black.js"
+import { LiteData } from "@smartcode-ai/console-core/lite.js"
+import { Subscription } from "@smartcode-ai/console-core/subscription.js"
+import { centsToMicroCents } from "@smartcode-ai/console-core/util/price.js"
+import { getWeekBounds } from "@smartcode-ai/console-core/util/date.js"
 
 export type LookupResult = {
   identifier: string

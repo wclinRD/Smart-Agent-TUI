@@ -1,4 +1,4 @@
-import { Tooltip } from "@smart-ai/ui/tooltip"
+import { Tooltip } from "@smartcode-ai/ui/tooltip"
 import { createResizeObserver } from "@solid-primitives/resize-observer"
 import {
   children,

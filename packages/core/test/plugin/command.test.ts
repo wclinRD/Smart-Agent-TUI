@@ -1,9 +1,9 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { CommandV2 } from "@smart-ai/core/command"
-import { Location } from "@smart-ai/core/location"
-import { CommandPlugin } from "@smart-ai/core/plugin/command"
-import { AbsolutePath } from "@smart-ai/core/schema"
+import { CommandV2 } from "@smartcode-ai/core/command"
+import { Location } from "@smartcode-ai/core/location"
+import { CommandPlugin } from "@smartcode-ai/core/plugin/command"
+import { AbsolutePath } from "@smartcode-ai/core/schema"
 import { location } from "../fixture/location"
 import { testEffect } from "../lib/effect"
 

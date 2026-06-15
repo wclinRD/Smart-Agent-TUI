@@ -1,7 +1,7 @@
 import { describe, expect } from "bun:test"
 import { Effect } from "effect"
-import { PluginV2 } from "@smart-ai/core/plugin"
-import { OpenAICompatiblePlugin } from "@smart-ai/core/plugin/provider/openai-compatible"
+import { PluginV2 } from "@smartcode-ai/core/plugin"
+import { OpenAICompatiblePlugin } from "@smartcode-ai/core/plugin/provider/openai-compatible"
 import { it, model } from "./provider-helper"
 
 describe("OpenAICompatiblePlugin", () => {
