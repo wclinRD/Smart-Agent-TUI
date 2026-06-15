@@ -832,7 +832,7 @@ test("does not bootstrap server plugins while initializing tui plugins", async (
           "",
         ].join("\n"),
       )
-      await Bun.write(path.join(dir, "smart.json"), JSON.stringify({ plugin: [pathToFileURL(plugin).href] }))
+      await Bun.write(path.join(dir, "smartcode.json"), JSON.stringify({ plugin: [pathToFileURL(plugin).href] }))
       return { marker }
     },
   })

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Smartcode
+Exec=/opt/Smartcode/ai.smartcode.desktop %U
+Terminal=false
+Type=Application
+Icon=ai.smartcode.desktop
+StartupWMClass=ai.smartcode.desktop
+NoDisplay=true
+Comment=Open source AI coding agent
+Categories=Development;

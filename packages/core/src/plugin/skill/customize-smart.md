@@ -23,14 +23,14 @@ shape before writing config, **fetch that URL and read the schema directly**
 rather than guessing. smart hard-fails on invalid config, so the cost of a
 wrong shape is a broken startup.
 
-Independently, every `smart.json` should declare
+Independently, every `smartcode.json` should declare
 `"$schema": "https://smart.ai/config.json"` so the user's editor catches
 mistakes as they type.
 
 ## Applying changes
 
 Config is loaded once when smart starts and is not hot-reloaded. After
-saving changes to `smart.json`, an agent file, a skill, a plugin, or any
+saving changes to `smartcode.json`, an agent file, a skill, a plugin, or any
 other config-time file, **tell the user to quit and restart smart** for
 the changes to take effect. The running session will keep using the
 already-loaded config until then.
@@ -39,8 +39,8 @@ already-loaded config until then.
 
 | Scope                         | Path                                                                                                                      |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Project config                | `./smart.json`, `./smart.jsonc`, or `.smart/smart.json` (smart walks up from the cwd to the worktree root) |
-| Global config                 | `~/.config/smart/smart.json` (NOT `~/.smart/`)                                                                   |
+| Project config                | `./smartcode.json` or `.smart/smartcode.json` or `.smartcode/smartcode.json` (smart walks up from the cwd to the worktree root) |
+| Global config                 | `~/.config/smartcode/smartcode.json` (NOT `~/.smart/` or `~/.smartcode/`)                                                                   |
 | Project agents                | `.smart/agent/<name>.md` or `.smart/agents/<name>.md`                                                               |
 | Global agents                 | `~/.config/smart/agent(s)/<name>.md`                                                                                   |
 | Project skills                | `.smart/skill(s)/<name>/SKILL.md`                                                                                      |
@@ -48,9 +48,9 @@ already-loaded config until then.
 | External skills (auto-loaded) | `~/.claude/skills/<name>/SKILL.md`, `~/.agents/skills/<name>/SKILL.md`                                                    |
 
 Configs from each scope are deep-merged. Project overrides global. Unknown
-top-level keys in `smart.json` are rejected with `ConfigInvalidError`.
+top-level keys in `smartcode.json` are rejected with `ConfigInvalidError`.
 
-## smart.json
+## smartcode.json
 
 Every field is optional.
 
@@ -222,7 +222,7 @@ Local `path` values may be relative to the declaring config, absolute, or use
 
 Two ways to define an agent. Use the file form for anything non-trivial.
 
-### Inline (in `smart.json`)
+### Inline (in `smartcode.json`)
 
 ```json
 {
@@ -397,7 +397,7 @@ the `plan` agent's permission ruleset (`edit: deny *`).
 
 When a user's config is broken and smart won't start, these env vars help:
 
-- `SMART_DISABLE_PROJECT_CONFIG=1`: skip the project's local `smart.json`
+- `SMART_DISABLE_PROJECT_CONFIG=1`: skip the project's local `smartcode.json`
   and start from globals only. Run from the project directory, smart loads,
   the user edits the broken file, then they restart without the flag.
 - `SMART_CONFIG=/path/to/file.json`: load an additional explicit config.
@@ -416,7 +416,7 @@ When a user's config is broken and smart won't start, these env vars help:
   `https://smart.ai/config.json` and read the schema rather than guessing.
 - Preserve `$schema` and any existing fields the user did not ask to change.
 - For agent, skill, and plugin definitions, prefer creating new files in the
-  correct location over inlining everything in `smart.json`.
+  correct location over inlining everything in `smartcode.json`.
 - If the user's existing config is malformed, point them at the env-var escape
   hatches above so they can edit from inside smart without breaking their
   session.

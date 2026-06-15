@@ -65,7 +65,7 @@ export function FormatError(input: unknown): string | undefined {
       `Model not found: ${stringField(providerModelNotFound, "providerID")}/${stringField(providerModelNotFound, "modelID")}`,
       ...(suggestions.length ? ["Did you mean: " + suggestions.join(", ")] : []),
       `Try: \`smartcode models\` to list available models`,
-      `Or check your config (smart.json) provider/model names`,
+      `Or check your config (smartcode.json) provider/model names`,
     ].join("\n")
   }
 

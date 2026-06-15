@@ -334,11 +334,12 @@ function patchDir(input: PatchInput) {
   if (input.global) return input.config ?? Global.Path.config
   const git = input.vcs === "git" && input.worktree !== "/"
   const root = git ? input.worktree : input.directory
-  return path.join(root, ".smart")
+  // Prefer .smartcode over .smart for new installs; .smart/ legacy still supported for reads
+  return path.join(root, ".smartcode")
 }
 
-function patchName(kind: Kind): "smart" | "tui" {
-  if (kind === "server") return "smart"
+function patchName(kind: Kind): "smartcode" | "tui" {
+  if (kind === "server") return "smartcode"
   return "tui"
 }
 

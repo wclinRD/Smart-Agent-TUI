@@ -1,4 +1,4 @@
-This is a plugin to simulate a remote environment locally. Add this to `.smart/smart.jsonc`:
+This is a plugin to simulate a remote environment locally. Add this to `.smart/smartcode.json`:
 
 ```json
   "plugin": ["../packages/smartcode/src/control-plane/dev/debug-workspace-plugin.ts"],

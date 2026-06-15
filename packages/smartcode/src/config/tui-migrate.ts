@@ -114,11 +114,11 @@ async function backupAndStripLegacy(file: string, source: string) {
 
 async function smartFiles(input: { directories: string[]; cwd: string }) {
   const files = [
-    ...ConfigPaths.fileInDirectory(Global.Path.config, "smart"),
-    ...(await Filesystem.findUp(["smart.json", "smart.jsonc"], input.cwd, undefined, { rootFirst: true })),
+    ...ConfigPaths.fileInDirectory(Global.Path.config, "smartcode"),
+    ...(await Filesystem.findUp(["smartcode.json", "smartcode.jsonc"], input.cwd, undefined, { rootFirst: true })),
   ]
   for (const dir of unique(input.directories)) {
-    files.push(...ConfigPaths.fileInDirectory(dir, "smart"))
+    files.push(...ConfigPaths.fileInDirectory(dir, "smartcode"))
   }
   if (Flag.SMART_CONFIG) files.push(Flag.SMART_CONFIG)
 

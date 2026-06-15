@@ -4,7 +4,7 @@ import { InstallationVersion } from "@smartcode-ai/core/installation/version"
 import { hideBin } from "yargs/helpers"
 const cli = yargs(hideBin(process.argv))
   .parserConfiguration({ "populate--": true })
-  .scriptName("smart")
+  .scriptName("smartcode")
   .wrap(100)
   .help("help", "show help")
   .alias("help", "h")
@@ -24,8 +24,8 @@ const cli = yargs(hideBin(process.argv))
     type: "boolean",
   })
   .middleware((opts) => {
-    if (opts.printLogs) process.env.SMART_PRINT_LOGS = "1"
-    if (opts.logLevel) process.env.SMART_LOG_LEVEL = opts.logLevel
+    if (opts.printLogs) process.env.SMARTCODE_PRINT_LOGS = "1"
+    if (opts.logLevel) process.env.SMARTCODE_LOG_LEVEL = opts.logLevel
   })
   .command(TuiThreadCommand)
   .parse()

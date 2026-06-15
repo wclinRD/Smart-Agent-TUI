@@ -295,7 +295,7 @@ export const dict = {
   "dialog.mcp.empty": "Nema konfigurisnih MCP-ova",
 
   "dialog.lsp.empty": "LSP-ovi se automatski otkrivaju prema tipu datoteke",
-  "dialog.plugins.empty": "Plugini su konfigurisani u smart.json",
+  "dialog.plugins.empty": "Plugini su konfigurisani u smartcode.json",
 
   "mcp.status.connected": "povezano",
   "mcp.status.failed": "neuspjelo",
@@ -473,7 +473,7 @@ export const dict = {
   "error.chain.responseBody": "Tijelo odgovora:\n{{body}}",
   "error.chain.didYouMean": "Da li si mislio: {{suggestions}}",
   "error.chain.modelNotFound": "Model nije pronađen: {{provider}}/{{model}}",
-  "error.chain.checkConfig": "Provjeri konfiguraciju (smart.json) provider/model names",
+  "error.chain.checkConfig": "Provjeri konfiguraciju (smartcode.json) provider/model names",
   "error.chain.mcpFailed": 'MCP server "{{name}}" nije uspio. Napomena: Smart još ne podržava MCP autentifikaciju.',
   "error.chain.providerAuthFailed": "Autentifikacija provajdera nije uspjela ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":

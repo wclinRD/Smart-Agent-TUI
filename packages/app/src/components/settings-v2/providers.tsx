@@ -18,8 +18,8 @@ type ProviderSource = "env" | "api" | "config" | "custom"
 type ProviderItem = ReturnType<ReturnType<typeof useProviders>["connected"]>[number]
 
 const PROVIDER_NOTES = [
-  { match: (id: string) => id === "smart", key: "dialog.provider.smart.note" },
-  { match: (id: string) => id === "smart-go", key: "dialog.provider.smartGo.tagline" },
+  { match: (id: string) => id === "smartcode", key: "dialog.provider.smart.note" },
+  { match: (id: string) => id === "smartcode-go", key: "dialog.provider.smartGo.tagline" },
   { match: (id: string) => id === "anthropic", key: "dialog.provider.anthropic.note" },
   { match: (id: string) => id.startsWith("github-copilot"), key: "dialog.provider.copilot.note" },
   { match: (id: string) => id === "openai", key: "dialog.provider.openai.note" },
@@ -40,7 +40,7 @@ export const SettingsProvidersV2: Component = () => {
   const connected = createMemo(() => {
     return providers
       .connected()
-      .filter((p) => p.id !== "smart" || Object.values(p.models).find((m) => m.cost?.input))
+      .filter((p) => p.id !== "smartcode" || Object.values(p.models).find((m) => m.cost?.input))
   })
 
   const popular = createMemo(() => {
@@ -197,7 +197,7 @@ export const SettingsProvidersV2: Component = () => {
                     <div class="settings-v2-provider-copy">
                       <div class="settings-v2-provider-main">
                         <span class="settings-v2-provider-name">{item.name}</span>
-                        <Show when={item.id === "smart" || item.id === "smart-go"}>
+                        <Show when={item.id === "smartcode" || item.id === "smartcode-go"}>
                           <Tag>{language.t("dialog.provider.tag.recommended")}</Tag>
                         </Show>
                       </div>

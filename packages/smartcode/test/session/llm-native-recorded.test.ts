@@ -310,7 +310,7 @@ function recordedNativeLLMLayer(scenario: RecordedScenario) {
 const writeConfig = (directory: string, scenario: RecordedScenario, model: ModelsDev.Provider["models"][string]) =>
   Effect.promise(() =>
     Bun.write(
-      path.join(directory, "smart.json"),
+      path.join(directory, "smartcode.json"),
       JSON.stringify({ $schema: "https://smart.ai/config.json", ...scenario.config(model) }),
     ),
   )

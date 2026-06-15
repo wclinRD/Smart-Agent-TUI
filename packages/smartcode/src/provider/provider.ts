@@ -362,7 +362,7 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
           }
 
           // Region resolution precedence (highest to lowest):
-          // 1. options.region from smart.json provider config
+          // 1. options.region from smartcode.json provider config
           // 2. defaultRegion from AWS_REGION environment variable
           // 3. Default "us-east-1" (baked into defaultRegion)
           const region = options?.region ?? defaultRegion
@@ -469,6 +469,16 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
             "HTTP-Referer": "https://smart.ai/",
             "X-Title": "smart",
             "X-BILLING-INVOKE-ORIGIN": "Smart",
+          },
+        },
+      }),
+    "opencode-zen": (provider) =>
+      Effect.succeed({
+        autoload: provider.source === "config",
+        options: {
+          headers: {
+            "HTTP-Referer": "https://smart.ai/",
+            "X-Title": "OpenCode Zen",
           },
         },
       }),

@@ -23,7 +23,7 @@ export const Plugin = PluginV2.define({
           skill: new SkillV2.Info({
             name: "customize-smart",
             description:
-              "Use ONLY when the user is editing or creating smart's own configuration: smart.json, smart.jsonc, files under .smart/, or files under ~/.config/smart/. Also use when creating or fixing smart agents, subagents, skills, plugins, MCP servers, or permission rules. Do not use for the user's own application code, or for any project that is not configuring smart itself.",
+              "Use ONLY when the user is editing or creating smartcode's own configuration: smartcode.json, files under .smart/ or .smartcode/, or files under ~/.config/smartcode/. Also use when creating or fixing smartcode agents, subagents, skills, plugins, MCP servers, or permission rules. Do not use for the user's own application code, or for any project that is not configuring smartcode itself.",
             location: AbsolutePath.make("/builtin/customize-smart.md"),
             content: CustomizeOpencodeContent,
           }),

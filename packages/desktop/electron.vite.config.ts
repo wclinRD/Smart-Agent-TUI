@@ -3,12 +3,12 @@ import { defineConfig } from "electron-vite"
 import appPlugin from "@smartcode-ai/app/vite"
 import * as fs from "node:fs/promises"
 
-const SMART_SERVER_DIST = "../smart/dist/node"
+const SMARTCODE_SERVER_DIST = "../smart/dist/node"
 
 const channel = (() => {
-  const raw = process.env.SMART_CHANNEL
+  const raw = process.env.SMARTCODE_CHANNEL
   if (raw === "dev" || raw === "beta" || raw === "prod") return raw
-  if (process.env.SMART_CHANNEL === "latest") return "prod"
+  if (process.env.SMARTCODE_CHANNEL === "latest") return "prod"
   return "dev"
 })()
 
@@ -34,7 +34,7 @@ const sentry =
 export default defineConfig({
   main: {
     define: {
-      "import.meta.env.SMART_CHANNEL": JSON.stringify(channel),
+      "import.meta.env.SMARTCODE_CHANNEL": JSON.stringify(channel),
     },
     build: {
       rollupOptions: {
@@ -44,25 +44,25 @@ export default defineConfig({
     },
     plugins: [
       {
-        name: "smart:node-pty-narrower",
+        name: "smartcode:node-pty-narrower",
         enforce: "pre",
         resolveId(s) {
           if (s === "@lydell/node-pty") return nodePtyPkg
         },
       },
       {
-        name: "smart:virtual-server-module",
+        name: "smartcode:virtual-server-module",
         enforce: "pre",
         resolveId(id) {
-          if (id === "virtual:smart-server") return this.resolve(`${SMART_SERVER_DIST}/node.js`)
+          if (id === "virtual:smartcode-server") return this.resolve(`${SMARTCODE_SERVER_DIST}/node.js`)
         },
       },
       {
-        name: "smart:copy-server-assets",
+        name: "smartcode:copy-server-assets",
         async writeBundle() {
-          for (const l of await fs.readdir(SMART_SERVER_DIST)) {
+          for (const l of await fs.readdir(SMARTCODE_SERVER_DIST)) {
             if (!l.endsWith(".wasm")) continue
-            await fs.writeFile(`./out/main/chunks/${l}`, await fs.readFile(`${SMART_SERVER_DIST}/${l}`))
+            await fs.writeFile(`./out/main/chunks/${l}`, await fs.readFile(`${SMARTCODE_SERVER_DIST}/${l}`))
           }
         },
       },

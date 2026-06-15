@@ -31,11 +31,11 @@ function run(target) {
 
 const envPath = process.env.SMART_BIN_PATH
 const scriptDir = path.dirname(fs.realpathSync(__filename))
-const cached = path.join(scriptDir, ".lildax")
+const cached = path.join(scriptDir, ".smartcode")
 const platform = { darwin: "darwin", linux: "linux", win32: "windows" }[os.platform()] || os.platform()
 const arch = { x64: "x64", arm64: "arm64", arm: "arm" }[os.arch()] || os.arch()
-const base = "@smart-ai/cli-" + platform + "-" + arch
-const binary = platform === "windows" ? "lildax.exe" : "lildax"
+const base = "@smartcode-ai/cli-" + platform + "-" + arch
+const binary = platform === "windows" ? "smartcode.exe" : "smartcode"
 
 function supportsAvx2() {
   if (arch !== "x64") return false
@@ -121,7 +121,7 @@ function findBinary(startDir) {
 const resolved = envPath || (fs.existsSync(cached) ? cached : findBinary(scriptDir))
 if (!resolved) {
   console.error(
-    "It seems that your package manager failed to install the right lildax CLI package. Try manually installing " +
+    "It seems that your package manager failed to install the right smartcode CLI package. Try manually installing " +
       names.map((name) => `"${name}"`).join(" or ") +
       " package",
   )

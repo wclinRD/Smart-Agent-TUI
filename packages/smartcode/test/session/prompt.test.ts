@@ -302,7 +302,7 @@ const ensureDir = Effect.fn("test.ensureDir")(function* (dir: string) {
 
 const writeConfig = Effect.fn("test.writeConfig")(function* (dir: string, config: Partial<ConfigV1.Info>) {
   yield* writeText(
-    path.join(dir, "smart.json"),
+    path.join(dir, "smartcode.json"),
     JSON.stringify({ $schema: "https://smart.ai/config.json", ...config }),
   )
 })

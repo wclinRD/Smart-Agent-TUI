@@ -158,7 +158,7 @@ const ref = (input: { id?: string; variant?: string } = {}) =>
 const writeProvider = (directory: string, disabled = false) =>
   Effect.promise(() =>
     fs.writeFile(
-      path.join(directory, "smart.json"),
+      path.join(directory, "smartcode.json"),
       JSON.stringify({
         providers: {
           "public-test": {

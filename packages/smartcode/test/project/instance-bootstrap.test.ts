@@ -45,7 +45,7 @@ const bootstrapFixture = Effect.gen(function* () {
   )
   yield* Effect.promise(() =>
     Bun.write(
-      path.join(dir, "smart.json"),
+      path.join(dir, "smartcode.json"),
       JSON.stringify({
         $schema: "https://smart.ai/config.json",
         plugin: [pathToFileURL(pluginFile).href],

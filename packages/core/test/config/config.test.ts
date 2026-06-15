@@ -176,11 +176,11 @@ describe("Config", () => {
                 JSON.stringify({ $schema: "base", providers: { base: provider } }),
               ),
               fs.writeFile(
-                path.join(tmp.path, "smart.json"),
+                path.join(tmp.path, "smartcode.json"),
                 JSON.stringify({ $schema: "middle", providers: { middle: provider } }),
               ),
               fs.writeFile(
-                path.join(tmp.path, "smart.jsonc"),
+                path.join(tmp.path, "smartcode.json"),
                 `{
                   // Later global files override scalar fields while retaining providers.
                   "$schema": "last",
@@ -201,7 +201,7 @@ describe("Config", () => {
             expect(documents[2]?.info.providers?.last).toBeInstanceOf(ConfigProvider.Info)
 
             yield* Effect.promise(() =>
-              fs.writeFile(path.join(tmp.path, "smart.jsonc"), JSON.stringify({ $schema: "changed" })),
+              fs.writeFile(path.join(tmp.path, "smartcode.json"), JSON.stringify({ $schema: "changed" })),
             )
             expect(
               (yield* config.entries())
@@ -221,7 +221,7 @@ describe("Config", () => {
     ).pipe(
       Effect.flatMap((tmp) =>
         Effect.gen(function* () {
-          const file = path.join(tmp.path, "smart.json")
+          const file = path.join(tmp.path, "smartcode.json")
           const contents = JSON.stringify({
             shell: "/bin/zsh",
             experimental: { policies: [{ effect: "deny", action: "provider.use", resource: "openai" }] },
@@ -256,7 +256,7 @@ describe("Config", () => {
         Effect.gen(function* () {
           yield* Effect.promise(() =>
             fs.writeFile(
-              path.join(tmp.path, "smart.json"),
+              path.join(tmp.path, "smartcode.json"),
               JSON.stringify({
                 shell: "/bin/bash",
                 model: "anthropic/claude",
@@ -442,7 +442,7 @@ describe("Config", () => {
         Effect.gen(function* () {
           yield* Effect.promise(() =>
             fs.writeFile(
-              path.join(tmp.path, "smart.json"),
+              path.join(tmp.path, "smartcode.json"),
               JSON.stringify({
                 reference: {
                   local: { path: "../library" },
@@ -478,7 +478,7 @@ describe("Config", () => {
         Effect.gen(function* () {
           yield* Effect.promise(() =>
             fs.writeFile(
-              path.join(tmp.path, "smart.json"),
+              path.join(tmp.path, "smartcode.json"),
               JSON.stringify({
                 shell: "/bin/zsh",
                 default_agent: "reviewer",
@@ -650,8 +650,8 @@ describe("Config", () => {
           yield* Effect.promise(() =>
             Promise.all([
               fs.writeFile(path.join(tmp.path, "config.json"), JSON.stringify({ $schema: "base" })),
-              fs.writeFile(path.join(tmp.path, "smart.json"), "{ invalid"),
-              fs.writeFile(path.join(tmp.path, "smart.jsonc"), JSON.stringify({ providers: { invalid: true } })),
+              fs.writeFile(path.join(tmp.path, "smartcode.json"), "{ invalid"),
+              fs.writeFile(path.join(tmp.path, "smartcode.json"), JSON.stringify({ providers: { invalid: true } })),
             ]),
           )
           return yield* Effect.gen(function* () {
@@ -676,13 +676,13 @@ describe("Config", () => {
           yield* Effect.promise(async () => {
             await fs.mkdir(global, { recursive: true })
             await fs.writeFile(
-              path.join(global, "smart.json"),
+              path.join(global, "smartcode.json"),
               JSON.stringify({
                 experimental: { policies: [{ effect: "deny", action: "provider.use", resource: "openai" }] },
               }),
             )
             await fs.writeFile(
-              path.join(tmp.path, "smart.json"),
+              path.join(tmp.path, "smartcode.json"),
               JSON.stringify({
                 experimental: { policies: [{ effect: "allow", action: "provider.use", resource: "openai" }] },
               }),
@@ -716,14 +716,14 @@ describe("Config", () => {
             await fs.mkdir(path.join(root, ".smart"), { recursive: true })
             await fs.mkdir(path.join(directory, ".smart"), { recursive: true })
             await Promise.all([
-              fs.writeFile(path.join(tmp.path, "smart.json"), JSON.stringify({ $schema: "outside" })),
-              fs.writeFile(path.join(global, "smart.json"), JSON.stringify({ $schema: "global" })),
-              fs.writeFile(path.join(root, "smart.json"), JSON.stringify({ $schema: "root" })),
-              fs.writeFile(path.join(parent, "smart.jsonc"), JSON.stringify({ $schema: "parent" })),
+              fs.writeFile(path.join(tmp.path, "smartcode.json"), JSON.stringify({ $schema: "outside" })),
+              fs.writeFile(path.join(global, "smartcode.json"), JSON.stringify({ $schema: "global" })),
+              fs.writeFile(path.join(root, "smartcode.json"), JSON.stringify({ $schema: "root" })),
+              fs.writeFile(path.join(parent, "smartcode.json"), JSON.stringify({ $schema: "parent" })),
               fs.writeFile(path.join(directory, "config.json"), JSON.stringify({ $schema: "directory" })),
-              fs.writeFile(path.join(root, ".smart", "smart.json"), JSON.stringify({ $schema: "root-dot" })),
+              fs.writeFile(path.join(root, ".smart", "smartcode.json"), JSON.stringify({ $schema: "root-dot" })),
               fs.writeFile(
-                path.join(directory, ".smart", "smart.jsonc"),
+                path.join(directory, ".smart", "smartcode.json"),
                 JSON.stringify({ $schema: "directory-dot" }),
               ),
             ])

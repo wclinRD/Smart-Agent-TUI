@@ -154,20 +154,20 @@ describe("filesystem", () => {
       const nested = path.join(project, "nested")
       await fs.mkdir(nested, { recursive: true })
 
-      await fs.writeFile(path.join(tmp.path, "smart.json"), "{}", "utf-8")
-      await fs.writeFile(path.join(tmp.path, "smart.jsonc"), "{}", "utf-8")
-      await fs.writeFile(path.join(project, "smart.json"), "{}", "utf-8")
-      await fs.writeFile(path.join(project, "smart.jsonc"), "{}", "utf-8")
+      await fs.writeFile(path.join(tmp.path, "smartcode.json"), "{}", "utf-8")
+      await fs.writeFile(path.join(tmp.path, "smartcode.jsonc"), "{}", "utf-8")
+      await fs.writeFile(path.join(project, "smartcode.json"), "{}", "utf-8")
+      await fs.writeFile(path.join(project, "smartcode.jsonc"), "{}", "utf-8")
 
-      const result = await Filesystem.findUp(["smart.json", "smart.jsonc"], nested, tmp.path, {
+      const result = await Filesystem.findUp(["smartcode.json", "smartcode.jsonc"], nested, tmp.path, {
         rootFirst: true,
       })
 
       expect(result).toEqual([
-        path.join(tmp.path, "smart.json"),
-        path.join(tmp.path, "smart.jsonc"),
-        path.join(project, "smart.json"),
-        path.join(project, "smart.jsonc"),
+        path.join(tmp.path, "smartcode.json"),
+        path.join(tmp.path, "smartcode.jsonc"),
+        path.join(project, "smartcode.json"),
+        path.join(project, "smartcode.jsonc"),
       ])
     })
   })

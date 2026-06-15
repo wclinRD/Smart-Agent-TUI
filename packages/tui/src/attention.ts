@@ -38,7 +38,7 @@ type TuiAttentionHost = TuiAttention & {
   dispose(): void
 }
 
-const DEFAULT_TITLE = "smart"
+const DEFAULT_TITLE = "smartcode"
 const DEFAULT_PACK_ID = "smart.default"
 const KV_SOUND_PACK = "attention_sound_pack"
 const TITLE_LIMIT = 80

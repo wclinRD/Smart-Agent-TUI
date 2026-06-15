@@ -17,8 +17,8 @@ import { useBindings } from "../keymap"
 import { useClipboard } from "../context/clipboard"
 
 const PROVIDER_PRIORITY: Record<string, number> = {
-  smart: 0,
-  "smart-go": 1,
+  smartcode: 0,
+  "smartcode-go": 1,
   openai: 2,
   "github-copilot": 3,
   anthropic: 4,
@@ -59,10 +59,10 @@ export function providerOptions(list: { id: string; name: string }[]): ProviderO
         value: provider.id,
         providerID: provider.id,
         description: {
-          smart: "(Recommended)",
+          smartcode: "(Recommended)",
           anthropic: "(API key)",
           openai: "(ChatGPT Plus/Pro or API key)",
-          "smart-go": "Low cost subscription for everyone",
+          "smartcode-go": "Low cost subscription for everyone",
         }[provider.id],
         category: provider.id in PROVIDER_PRIORITY ? "Popular" : "Providers",
       })),
@@ -96,7 +96,7 @@ export function createDialogProviderOptions() {
       placeholder: "Provider id",
       description: () => (
         <text fg={theme.textMuted}>
-          This only stores a credential. Configure the provider in smart.json to use it.
+          This only stores a credential. Configure the provider in smartcode.json to use it.
         </text>
       ),
     })
@@ -368,7 +368,7 @@ function ApiMethod(props: ApiMethodProps) {
       placeholder="API key"
       description={
         {
-          smart: (
+          smartcode: (
             <box gap={1}>
               <text fg={theme.textMuted}>
                 Smart Zen gives you access to all the best coding models at the cheapest prices with a single API
@@ -379,7 +379,7 @@ function ApiMethod(props: ApiMethodProps) {
               </text>
             </box>
           ),
-          "smart-go": (
+          "smartcode-go": (
             <box gap={1}>
               <text fg={theme.textMuted}>
                 Smart Go is a $10 per month subscription that provides reliable access to popular open coding models
@@ -407,7 +407,7 @@ function ApiMethod(props: ApiMethodProps) {
         if (props.custom && !sync.data.provider_next.all.some((provider) => provider.id === props.providerID)) {
           toast.show({
             variant: "info",
-            message: `Saved credential for ${props.providerID}. Configure it in smart.json to use it.`,
+            message: `Saved credential for ${props.providerID}. Configure it in smartcode.json to use it.`,
           })
           dialog.clear()
           return

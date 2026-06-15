@@ -50,7 +50,7 @@ function withProject<A, E, R>(source: string, self: Effect.Effect<A, E, R>) {
         Effect.promise(() => Bun.write(file, source)),
         Effect.promise(() =>
           Bun.write(
-            path.join(test.directory, "smart.json"),
+            path.join(test.directory, "smartcode.json"),
             JSON.stringify(
               {
                 $schema: "https://smart.ai/config.json",

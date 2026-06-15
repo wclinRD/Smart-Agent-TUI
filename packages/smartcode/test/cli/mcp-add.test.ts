@@ -22,7 +22,7 @@ describe("smart mcp add (non-interactive subprocess)", () => {
         smart.expectExit(result, 0)
 
         const config = yield* Effect.promise(() =>
-          Bun.file(path.join(home, ".config", "smart", "smart.json")).json(),
+          Bun.file(path.join(home, ".config", "smartcode", "smartcode.json")).json(),
         )
         expect(config.mcp.github).toEqual({
           type: "remote",
@@ -58,7 +58,7 @@ describe("smart mcp add (non-interactive subprocess)", () => {
         smart.expectExit(result, 0)
 
         const config = yield* Effect.promise(() =>
-          Bun.file(path.join(home, ".config", "smart", "smart.json")).json(),
+          Bun.file(path.join(home, ".config", "smartcode", "smartcode.json")).json(),
         )
         expect(config.mcp.local).toEqual({
           type: "local",

@@ -87,7 +87,7 @@
       "name": "@smartcode-ai/cli",
       "version": "1.17.7",
       "bin": {
-        "lildax": "./bin/lildax.cjs",
+        "smartcode": "./bin/smartcode.cjs",
       },
       "dependencies": {
         "@effect/platform-node": "catalog:",

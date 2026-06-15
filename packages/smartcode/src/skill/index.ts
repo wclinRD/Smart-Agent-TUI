@@ -24,14 +24,14 @@ const EXTERNAL_SKILL_PATTERN = "skills/**/SKILL.md"
 const SMART_SKILL_PATTERN = "{skill,skills}/**/SKILL.md"
 const SKILL_PATTERN = "**/SKILL.md"
 
-// Built-in skill that ships with smart. The model's intuition for what an
-// smart.json should look like is often wrong, and smart hard-fails on
+// Built-in skill that ships with smartcode. The model's intuition for what an
+// smartcode.json should look like is often wrong, and smartcode hard-fails on
 // invalid config, so users hit cryptic startup errors. Loading this skill
 // when the model is asked to touch smart's own config files gives it the
 // actual schemas instead of guesses.
 const CUSTOMIZE_SMART_SKILL_NAME = "customize-smart"
 const CUSTOMIZE_SMART_SKILL_DESCRIPTION =
-  "Use ONLY when the user is editing or creating smart's own configuration: smart.json, smart.jsonc, files under .smart/, or files under ~/.config/smart/. Also use when creating or fixing smart agents, subagents, skills, plugins, MCP servers, or permission rules. Do not use for the user's own application code, or for any project that is not configuring smart itself."
+   "Use ONLY when the user is editing or creating smartcode's own configuration: smartcode.json, files under .smart/ or .smartcode/, or files under ~/.config/smartcode/. Also use when creating or fixing smartcode agents, subagents, skills, plugins, MCP servers, or permission rules. Do not use for the user's own application code, or for any project that is not configuring smartcode itself."
 const CUSTOMIZE_SMART_SKILL_BODY = SkillPlugin.CustomizeOpencodeContent
 
 export const Info = Schema.Struct({

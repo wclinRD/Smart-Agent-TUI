@@ -27,12 +27,12 @@ console.log("binaries", binaries)
 const version = Object.values(binaries)[0]
 
 await $`mkdir -p ./dist/${pkg.name}/bin`
-await $`cp ./bin/lildax.cjs ./dist/${pkg.name}/bin/lildax`
+await $`cp ./bin/smartcode.cjs ./dist/${pkg.name}/bin/smartcode`
 await Bun.file(`./dist/${pkg.name}/package.json`).write(
   JSON.stringify(
     {
       name: pkg.name,
-      bin: { lildax: "./bin/lildax" },
+      bin: { smartcode: "./bin/smartcode" },
       version,
       license: pkg.license,
       repository: { type: "git", url: "git+https://github.com/anomalyco/smart.git" },

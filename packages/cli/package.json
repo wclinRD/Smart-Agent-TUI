@@ -5,7 +5,7 @@
   "type": "module",
   "license": "MIT",
   "bin": {
-    "lildax": "./bin/lildax.cjs"
+    "smartcode": "./bin/smartcode.cjs"
   },
   "files": [
     "bin"
@@ -17,13 +17,13 @@
   },
   "dependencies": {
     "@effect/platform-node": "catalog:",
+    "@opentui/core": "catalog:",
+    "@opentui/solid": "catalog:",
+    "@parcel/watcher": "2.5.1",
     "@smartcode-ai/core": "workspace:*",
     "@smartcode-ai/sdk": "workspace:*",
     "@smartcode-ai/server": "workspace:*",
     "@smartcode-ai/tui": "workspace:*",
-    "@opentui/core": "catalog:",
-    "@opentui/solid": "catalog:",
-    "@parcel/watcher": "2.5.1",
     "effect": "catalog:",
     "solid-js": "catalog:"
   },

@@ -100,7 +100,7 @@ describe("plugin.workspace", () => {
 
       yield* Effect.promise(() =>
         Bun.write(
-          path.join(dir, "smart.json"),
+          path.join(dir, "smartcode.json"),
           JSON.stringify(
             {
               $schema: "https://smart.ai/config.json",

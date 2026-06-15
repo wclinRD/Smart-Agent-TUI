@@ -11,32 +11,32 @@ export function resolveChannel(): Channel {
 export const SIDECAR_BINARIES: Array<{ rustTarget: string; ocBinary: string; assetExt: string }> = [
   {
     rustTarget: "aarch64-apple-darwin",
-    ocBinary: "smart-darwin-arm64",
+    ocBinary: "smartcode-darwin-arm64",
     assetExt: "zip",
   },
   {
     rustTarget: "x86_64-apple-darwin",
-    ocBinary: "smart-darwin-x64-baseline",
+    ocBinary: "smartcode-darwin-x64-baseline",
     assetExt: "zip",
   },
   {
     rustTarget: "aarch64-pc-windows-msvc",
-    ocBinary: "smart-windows-arm64",
+    ocBinary: "smartcode-windows-arm64",
     assetExt: "zip",
   },
   {
     rustTarget: "x86_64-pc-windows-msvc",
-    ocBinary: "smart-windows-x64-baseline",
+    ocBinary: "smartcode-windows-x64-baseline",
     assetExt: "zip",
   },
   {
     rustTarget: "x86_64-unknown-linux-gnu",
-    ocBinary: "smart-linux-x64-baseline",
+    ocBinary: "smartcode-linux-x64-baseline",
     assetExt: "tar.gz",
   },
   {
     rustTarget: "aarch64-unknown-linux-gnu",
-    ocBinary: "smart-linux-arm64",
+    ocBinary: "smartcode-linux-arm64",
     assetExt: "tar.gz",
   },
 ]
@@ -61,7 +61,7 @@ export function getCurrentSidecar(target = RUST_TARGET ?? nativeTarget()) {
 export async function copyBinaryToSidecarFolder(source: string) {
   const dir = `resources`
   await $`mkdir -p ${dir}`
-  const dest = windowsify(`${dir}/smart-cli`)
+  const dest = windowsify(`${dir}/smartcode-cli`)
   await $`cp ${source} ${dest}`
   if (process.platform === "win32" && process.env.GITHUB_ACTIONS === "true") {
     await $`pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File ../../script/sign-windows.ps1 ${dest}`

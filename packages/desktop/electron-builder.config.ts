@@ -10,10 +10,10 @@ const packageDir = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.resolve(packageDir, "../..")
 const signScript = path.join(rootDir, "script", "sign-windows.ps1")
 // The Electron 42 packaging update briefly installed Linux launchers/icons under
-// "smart-desktop". Keep that hidden desktop entry around so existing GNOME/KDE
-// pins still resolve after the canonical app id changes back to ai.smart.desktop.
-const legacyDesktopEntry = path.join(packageDir, "resources", "linux", "smart-desktop.desktop")
-const legacyDesktopEntryFpm = `${legacyDesktopEntry}=/usr/share/applications/smart-desktop.desktop`
+// "smartcode-desktop". Keep that hidden desktop entry around so existing GNOME/KDE
+// pins still resolve after the canonical app id changes back to ai.smartcode.desktop.
+const legacyDesktopEntry = path.join(packageDir, "resources", "linux", "smartcode-desktop.desktop")
+const legacyDesktopEntryFpm = `${legacyDesktopEntry}=/usr/share/applications/smartcode-desktop.desktop`
 
 async function signWindows(configuration: { path: string }) {
   if (process.platform !== "win32") return
@@ -27,26 +27,26 @@ async function signWindows(configuration: { path: string }) {
 }
 
 const channel = (() => {
-  const raw = process.env.SMART_CHANNEL
+  const raw = process.env.SMARTCODE_CHANNEL
   if (raw === "dev" || raw === "beta" || raw === "prod") return raw
   return "dev"
 })()
 
 const APP_IDS = {
-  dev: "ai.smart.desktop.dev",
-  beta: "ai.smart.desktop.beta",
-  prod: "ai.smart.desktop",
+  dev: "ai.smartcode.desktop.dev",
+  beta: "ai.smartcode.desktop.beta",
+  prod: "ai.smartcode.desktop",
 } as const
 
 const getBase = (appId: string): Configuration => ({
-  artifactName: "smart-desktop-${os}-${arch}.${ext}",
+  artifactName: "smartcode-desktop-${os}-${arch}.${ext}",
   directories: {
     output: "dist",
     buildResources: "resources",
   },
   // Linux launchers are .desktop files, so this is the desktop file name,
-  // not just the app id. For prod, app id "ai.smart.desktop" becomes
-  // "ai.smart.desktop.desktop".
+  // not just the app id. For prod, app id "ai.smartcode.desktop" becomes
+  // "ai.smartcode.desktop.desktop".
   // https://developer.gnome.org/documentation/guidelines/maintainer/integrating.html
   // https://www.electron.build/docs/linux/
   extraMetadata: {
@@ -74,8 +74,8 @@ const getBase = (appId: string): Configuration => ({
     sign: true,
   },
   protocols: {
-    name: "Smart",
-    schemes: ["smart"],
+    name: "Smartcode",
+    schemes: ["smartcode"],
   },
   win: {
     icon: `resources/icons/icon.ico`,
@@ -115,29 +115,29 @@ function getConfig() {
       return {
         ...base,
         appId,
-        productName: "Smart Dev",
-        rpm: { packageName: "smart-dev" },
+        productName: "Smartcode Dev",
+        rpm: { packageName: "smartcode-dev" },
       }
     }
     case "beta": {
       return {
         ...base,
         appId,
-        productName: "Smart Beta",
-        protocols: { name: "Smart Beta", schemes: ["smart"] },
+        productName: "Smartcode Beta",
+        protocols: { name: "Smartcode Beta", schemes: ["smartcode"] },
         publish: { provider: "github", owner: "anomalyco", repo: "smart-beta", channel: "latest" },
-        rpm: { packageName: "smart-beta" },
+        rpm: { packageName: "smartcode-beta" },
       }
     }
     case "prod": {
       return {
         ...base,
         appId,
-        productName: "Smart",
-        protocols: { name: "Smart", schemes: ["smart"] },
+        productName: "Smartcode",
+        protocols: { name: "Smartcode", schemes: ["smartcode"] },
         publish: { provider: "github", owner: "anomalyco", repo: "smart", channel: "latest" },
         deb: { fpm: [legacyDesktopEntryFpm] },
-        rpm: { packageName: "smart", fpm: [legacyDesktopEntryFpm] },
+        rpm: { packageName: "smartcode", fpm: [legacyDesktopEntryFpm] },
       }
     }
   }

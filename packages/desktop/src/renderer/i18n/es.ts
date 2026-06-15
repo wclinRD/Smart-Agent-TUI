@@ -11,7 +11,7 @@ export const dict = {
   "desktop.updater.checkFailed.title": "Comprobación de actualizaciones fallida",
   "desktop.updater.checkFailed.message": "No se pudieron buscar actualizaciones",
   "desktop.updater.none.title": "No hay actualizaciones disponibles",
-  "desktop.updater.none.message": "Ya estás usando la versión más reciente de Smart",
+  "desktop.updater.none.message": "Ya estás usando la versión más reciente de Smartcode",
   "desktop.updater.downloadFailed.title": "Actualización fallida",
   "desktop.updater.downloadFailed.message": "No se pudo descargar la actualización",
   "desktop.updater.downloaded.title": "Actualización descargada",
@@ -21,7 +21,7 @@ export const dict = {
   "desktop.updater.installFailed.message": "No se pudo instalar la actualización",
 
   "desktop.cli.installed.title": "CLI instalada",
-  "desktop.cli.installed.message": "CLI instalada en {{path}}\n\nReinicia tu terminal para usar el comando 'smart'.",
+  "desktop.cli.installed.message": "CLI instalada en {{path}}\n\nReinicia tu terminal para usar el comando 'smartcode'.",
   "desktop.cli.failed.title": "Instalación fallida",
   "desktop.cli.failed.message": "No se pudo instalar la CLI: {{error}}",
 }

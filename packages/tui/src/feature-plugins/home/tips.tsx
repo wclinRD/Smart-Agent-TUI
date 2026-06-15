@@ -41,7 +41,7 @@ const tui: TuiPlugin = async (api) => {
         const first = createMemo(() => api.state.session.count() === 0)
         const connected = createMemo(() =>
           api.state.provider.some(
-            (item) => item.id !== "smart" || Object.values(item.models).some((model) => model.cost?.input !== 0),
+            (item) => item.id !== "smartcode" || Object.values(item.models).some((model) => model.cost?.input !== 0),
           ),
         )
         const show = createMemo(() => (!first() || !connected()) && !hidden())

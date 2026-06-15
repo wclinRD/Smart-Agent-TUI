@@ -157,13 +157,13 @@ afterEach(async () => {
 })
 
 const writeManagedSettingsEffect = (settings: object, filename?: string) =>
-  FSUtil.use.writeWithDirs(path.join(managedConfigDir, filename ?? "smart.json"), JSON.stringify(settings))
+  FSUtil.use.writeWithDirs(path.join(managedConfigDir, filename ?? "smartcode.json"), JSON.stringify(settings))
 
-async function writeConfig(dir: string, config: object, name = "smart.json") {
+async function writeConfig(dir: string, config: object, name = "smartcode.json") {
   await Filesystem.write(path.join(dir, name), JSON.stringify(config))
 }
 
-const writeConfigEffect = (dir: string, config: object, name = "smart.json") =>
+const writeConfigEffect = (dir: string, config: object, name = "smartcode.json") =>
   FSUtil.use.writeWithDirs(path.join(dir, name), JSON.stringify(config))
 
 const withInstanceDir = <A, E, R>(dir: string, effect: Effect.Effect<A, E, R>) =>
@@ -323,7 +323,7 @@ it.effect("creates global jsonc config with schema when no global configs exist"
     Effect.gen(function* () {
       yield* Config.use.get().pipe(provideInstanceEffect(dir))
 
-      const content = yield* FSUtil.use.readFileString(path.join(dir, "smart.jsonc"))
+      const content = yield* FSUtil.use.readFileString(path.join(dir, "smartcode.json"))
       expect(content).toContain('"$schema": "https://smart.ai/config.json"')
     }).pipe(Effect.provide(testInstanceStoreLayer), Effect.provide(CrossSpawnSpawner.defaultLayer)),
   ),
@@ -339,7 +339,7 @@ it.effect("does not create global config when SMART_CONFIG_DIR is set", () =>
         Effect.gen(function* () {
           yield* Config.use.get().pipe(provideInstanceEffect(dir))
 
-          expect(yield* FSUtil.use.existsSafe(path.join(dir, "smart.jsonc"))).toBe(false)
+          expect(yield* FSUtil.use.existsSafe(path.join(dir, "smartcode.json"))).toBe(false)
         }).pipe(Effect.provide(testInstanceStoreLayer), Effect.provide(CrossSpawnSpawner.defaultLayer)),
       ),
     )
@@ -386,18 +386,18 @@ it.effect("updates global config and omits empty shell key in json", () =>
     Effect.gen(function* () {
       yield* Config.use.updateGlobal({ shell: "" })
 
-      const writtenConfig = yield* FSUtil.use.readJson(path.join(dir, "smart.json"))
+      const writtenConfig = yield* FSUtil.use.readJson(path.join(dir, "smartcode.json"))
       expect(writtenConfig).not.toHaveProperty("shell")
     }),
   ),
 )
 
 it.effect("updates global config and omits empty shell key in jsonc", () =>
-  withGlobalConfig({ config: { shell: "bash", model: "test/model" }, name: "smart.jsonc" }, ({ dir }) =>
+  withGlobalConfig({ config: { shell: "bash", model: "test/model" }, name: "smartcode.json" }, ({ dir }) =>
     Effect.gen(function* () {
       yield* Config.use.updateGlobal({ shell: "" })
 
-      const file = path.join(dir, "smart.jsonc")
+      const file = path.join(dir, "smartcode.json")
       const writtenConfig = yield* FSUtil.use.readFileString(file)
       const parsed = ConfigParse.schema(ConfigV1.Info, ConfigParse.jsonc(writtenConfig, file), file)
       expect(writtenConfig).not.toContain('"shell"')
@@ -463,7 +463,7 @@ it.instance("loads JSONC config file", () =>
   Effect.gen(function* () {
     const test = yield* TestInstance
     yield* FSUtil.use.writeWithDirs(
-      path.join(test.directory, "smart.jsonc"),
+      path.join(test.directory, "smartcode.json"),
       `{
         // This is a comment
         "$schema": "https://smart.ai/config.json",
@@ -487,7 +487,7 @@ it.instance("jsonc overrides json in the same directory", () =>
         model: "base",
         username: "base",
       },
-      "smart.jsonc",
+      "smartcode.json",
     )
     yield* writeConfigEffect(test.directory, {
       $schema: "https://smart.ai/config.json",
@@ -523,14 +523,14 @@ it.instance("preserves env variables when adding $schema to config", () =>
       const test = yield* TestInstance
       // Config without $schema - should trigger auto-add
       yield* FSUtil.use.writeWithDirs(
-        path.join(test.directory, "smart.json"),
+        path.join(test.directory, "smartcode.json"),
         JSON.stringify({ username: "{env:PRESERVE_VAR}" }),
       )
       const config = yield* Config.use.get()
       expect(config.username).toBe("secret_value")
 
       // Read the file to verify the env variable was preserved
-      const content = yield* FSUtil.use.readFileString(path.join(test.directory, "smart.json"))
+      const content = yield* FSUtil.use.readFileString(path.join(test.directory, "smartcode.json"))
       expect(content).toContain("{env:PRESERVE_VAR}")
       expect(content).not.toContain("secret_value")
       expect(content).toContain("$schema")
@@ -622,7 +622,7 @@ it.instance("validates config schema and throws on invalid fields", () =>
 it.instance("throws error for invalid JSON", () =>
   Effect.gen(function* () {
     const test = yield* TestInstance
-    yield* FSUtil.use.writeWithDirs(path.join(test.directory, "smart.json"), "{ invalid json }")
+    yield* FSUtil.use.writeWithDirs(path.join(test.directory, "smartcode.json"), "{ invalid json }")
     const exit = yield* Config.use.get().pipe(Effect.exit)
     expect(Exit.isFailure(exit)).toBe(true)
   }),
@@ -1203,7 +1203,7 @@ it.instance(
 it.instance("managed jsonc settings override managed json settings", () =>
   Effect.gen(function* () {
     yield* writeManagedSettingsEffect({ model: "managed/json" })
-    yield* writeManagedSettingsEffect({ model: "managed/jsonc" }, "smart.jsonc")
+    yield* writeManagedSettingsEffect({ model: "managed/jsonc" }, "smartcode.json")
 
     const config = yield* Config.use.get()
     expect(config.model).toBe("managed/jsonc")
@@ -1373,7 +1373,7 @@ it.instance("project config can override MCP server enabled status", () =>
           },
         },
       },
-      "smart.jsonc",
+      "smartcode.json",
     )
 
     const config = yield* Config.use.get()
@@ -1418,7 +1418,7 @@ it.instance("MCP config deep merges preserving base config properties", () =>
           },
         },
       },
-      "smart.jsonc",
+      "smartcode.json",
     )
 
     const config = yield* Config.use.get()
@@ -1459,7 +1459,7 @@ it.instance("local .smart config can override MCP from project config", () =>
           },
         },
       },
-      "smart.json",
+      "smartcode.json",
     )
 
     const config = yield* Config.use.get()
@@ -1668,7 +1668,7 @@ loginPageWellKnown.it.instance(
 describe("resolvePluginSpec", () => {
   test("keeps package specs unchanged", async () => {
     await using tmp = await tmpdir()
-    const file = path.join(tmp.path, "smart.json")
+    const file = path.join(tmp.path, "smartcode.json")
     expect(await ConfigPlugin.resolvePluginSpec("oh-my-smart@2.4.3", file)).toBe("oh-my-smart@2.4.3")
     expect(await ConfigPlugin.resolvePluginSpec("@scope/pkg", file)).toBe("@scope/pkg")
   })
@@ -1684,7 +1684,7 @@ describe("resolvePluginSpec", () => {
       },
     })
 
-    const file = path.join(tmp.path, "smart.json")
+    const file = path.join(tmp.path, "smartcode.json")
     const hit = await ConfigPlugin.resolvePluginSpec(".\\plugin", file)
     expect(ConfigPlugin.pluginSpecifier(hit)).toBe(pathToFileURL(path.join(tmp.path, "plugin", "index.ts")).href)
   })
@@ -1696,7 +1696,7 @@ describe("resolvePluginSpec", () => {
       },
     })
 
-    const file = path.join(tmp.path, "smart.json")
+    const file = path.join(tmp.path, "smartcode.json")
     const hit = await ConfigPlugin.resolvePluginSpec("./plugin.ts", file)
     expect(ConfigPlugin.pluginSpecifier(hit)).toBe(pathToFileURL(path.join(tmp.path, "plugin.ts")).href)
   })
@@ -1715,7 +1715,7 @@ describe("resolvePluginSpec", () => {
       },
     })
 
-    const file = path.join(tmp.path, "smart.json")
+    const file = path.join(tmp.path, "smartcode.json")
     const hit = await ConfigPlugin.resolvePluginSpec("./plugin", file)
     expect(ConfigPlugin.pluginSpecifier(hit)).toBe(pathToFileURL(path.join(tmp.path, "plugin")).href)
   })
@@ -1729,7 +1729,7 @@ describe("resolvePluginSpec", () => {
       },
     })
 
-    const file = path.join(tmp.path, "smart.json")
+    const file = path.join(tmp.path, "smartcode.json")
     const hit = await ConfigPlugin.resolvePluginSpec("./plugin", file)
     expect(ConfigPlugin.pluginSpecifier(hit)).toBe(pathToFileURL(path.join(tmp.path, "plugin", "index.ts")).href)
   })

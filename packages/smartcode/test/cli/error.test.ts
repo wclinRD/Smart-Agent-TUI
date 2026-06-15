@@ -8,14 +8,14 @@ describe("cli.error", () => {
     const cases = [
       {
         tag: "ConfigJsonError",
-        data: { path: "/tmp/smart.jsonc", message: "Unexpected token" },
-        expected: "Config file at /tmp/smart.jsonc is not valid JSON(C): Unexpected token",
+        data: { path: "/tmp/smartcode.json", message: "Unexpected token" },
+        expected: "Config file at /tmp/smartcode.json is not valid JSON(C): Unexpected token",
       },
       {
         tag: "ConfigDirectoryTypoError",
-        data: { path: "/tmp/smart.jsonc", dir: ".smart", suggestion: "smart" },
+        data: { path: "/tmp/smartcode.json", dir: ".smart", suggestion: "smart" },
         expected:
-          'Directory ".smart" in /tmp/smart.jsonc is not valid. Rename the directory to "smart" or remove it. This is a common typo.',
+          'Directory ".smart" in /tmp/smartcode.json is not valid. Rename the directory to "smart" or remove it. This is a common typo.',
       },
       {
         tag: "ConfigFrontmatterError",
@@ -25,11 +25,11 @@ describe("cli.error", () => {
       {
         tag: "ConfigInvalidError",
         data: {
-          path: "/tmp/smart.jsonc",
+          path: "/tmp/smartcode.json",
           message: "schema mismatch",
           issues: [{ message: "Expected string", path: ["provider", "id"] }],
         },
-        expected: "Configuration is invalid at /tmp/smart.jsonc: schema mismatch\n↳ Expected string provider.id",
+        expected: "Configuration is invalid at /tmp/smartcode.json: schema mismatch\n↳ Expected string provider.id",
       },
     ]
 
@@ -41,7 +41,7 @@ describe("cli.error", () => {
 
   test("preserves multiline JSONC diagnostics for tagged config errors", () => {
     const data = {
-      path: "/tmp/smart.jsonc",
+      path: "/tmp/smartcode.json",
       message:
         '\n--- JSONC Input ---\n{\n  "model": \n}\n--- Errors ---\nValueExpected at line 3, column 1\n   Line 3: }\n          ^\n--- End ---',
     }
@@ -74,7 +74,7 @@ describe("cli.error", () => {
       "Model not found: anthropic/claude-sonet-4",
       "Did you mean: claude-sonnet-4",
       "Try: `smartcode models` to list available models",
-      "Or check your config (smart.json) provider/model names",
+      "Or check your config (smartcode.json) provider/model names",
     ].join("\n")
 
     expect(FormatError({ name: "ProviderModelNotFoundError", data })).toBe(expected)

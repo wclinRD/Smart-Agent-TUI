@@ -34,7 +34,7 @@ const args = hideBin(process.argv)
 
 function show(out: string) {
   const text = out.trimStart()
-  if (!text.startsWith("smart ")) {
+  if (!text.startsWith("smartcode ")) {
     process.stderr.write(UI.logo() + EOL + EOL)
     process.stderr.write(text + EOL)
     return
@@ -44,7 +44,7 @@ function show(out: string) {
 
 const cli = yargs(args)
   .parserConfiguration({ "populate--": true })
-  .scriptName("smart")
+  .scriptName("smartcode")
   .wrap(100)
   .help("help", "show help")
   .alias("help", "h")
@@ -64,17 +64,17 @@ const cli = yargs(args)
     type: "boolean",
   })
   .middleware(async (opts) => {
-    if (opts.printLogs) process.env.SMART_PRINT_LOGS = "1"
-    if (opts.logLevel) process.env.SMART_LOG_LEVEL = opts.logLevel
+    if (opts.printLogs) process.env.SMARTCODE_PRINT_LOGS = "1"
+    if (opts.logLevel) process.env.SMARTCODE_LOG_LEVEL = opts.logLevel
     if (opts.pure) {
-      process.env.SMART_PURE = "1"
+      process.env.SMARTCODE_PURE = "1"
     }
 
     Heap.start()
 
     process.env.AGENT = "1"
     process.env.OPENCODE = "1"
-    process.env.SMART_PID = String(process.pid)
+    process.env.SMARTCODE_PID = String(process.pid)
   })
   .usage("")
   .completion("completion", "generate shell completion script")

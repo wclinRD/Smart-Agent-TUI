@@ -189,7 +189,7 @@ export const McpAuthCommand = effectCmd({
 
     if (servers.length === 0) {
       prompts.log.warn("No OAuth-capable MCP servers configured")
-      prompts.log.info("Remote MCP servers support OAuth by default. Add a remote server in smart.json:")
+      prompts.log.info("Remote MCP servers support OAuth by default. Add a remote server in smartcode.json:")
       prompts.log.info(`
   "mcp": {
     "my-server": {
@@ -403,11 +403,15 @@ export const McpLogoutCommand = effectCmd({
 })
 
 async function resolveConfigPath(baseDir: string, global = false) {
-  // Check for existing config files (prefer .jsonc over .json, check .smart/ subdirectory too)
-  const candidates = [path.join(baseDir, "smart.json"), path.join(baseDir, "smart.jsonc")]
-
-  if (!global) {
-    candidates.push(path.join(baseDir, ".smart", "smart.json"), path.join(baseDir, ".smart", "smart.jsonc"))
+  // Check for smartcode.json in various locations
+  const candidates = [path.join(baseDir, "smartcode.json")]
+  const smartDir = path.join(baseDir, ".smart")
+  if (existsSync(smartDir)) {
+    candidates.push(path.join(smartDir, "smartcode.json"))
+  }
+  const smartcodeDir = path.join(baseDir, ".smartcode")
+  if (existsSync(smartcodeDir)) {
+    candidates.push(path.join(smartcodeDir, "smartcode.json"))
   }
 
   for (const candidate of candidates) {
@@ -416,7 +420,6 @@ async function resolveConfigPath(baseDir: string, global = false) {
     }
   }
 
-  // Default to smart.json if none exist
   return candidates[0]
 }
 

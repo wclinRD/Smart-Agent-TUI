@@ -33,7 +33,7 @@ const IS_PREVIEW = CHANNEL !== "latest"
 
 const VERSION = await (async () => {
   if (env.SMART_VERSION) return env.SMART_VERSION
-  if (IS_PREVIEW) return `0.0.0-${CHANNEL}-${new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "")}`
+  if (IS_PREVIEW) return "0.0.1"
   const version = await fetch("https://registry.npmjs.org/smart-ai/latest")
     .then((res) => {
       if (!res.ok) throw new Error(res.statusText)

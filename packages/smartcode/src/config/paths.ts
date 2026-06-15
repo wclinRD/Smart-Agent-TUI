@@ -26,13 +26,13 @@ export const directories = Effect.fn("ConfigPaths.directories")(function* (direc
     Global.Path.config,
     ...(!Flag.SMART_DISABLE_PROJECT_CONFIG
       ? yield* afs.up({
-          targets: [".smart"],
+          targets: [".smartcode", ".smart"],
           start: directory,
           stop: worktree,
         })
       : []),
     ...(yield* afs.up({
-      targets: [".smart"],
+      targets: [".smartcode", ".smart"],
       start: Global.Path.home,
       stop: Global.Path.home,
     })),
